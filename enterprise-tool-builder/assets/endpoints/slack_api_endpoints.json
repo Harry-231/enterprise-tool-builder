@@ -1,0 +1,12 @@
+{
+  "service": "Slack Web API",
+  "service_key": "slack",
+  "base_url": "https://slack.com/api",
+  "auth_header": "Authorization: Bearer xoxb-<bot_token>",
+  "total_endpoints": 0,
+  "endpoints_by_tag": {},
+  "all_endpoints": [],
+  "methods_reference": "https://api.slack.com/methods",
+  "scopes_reference": "https://api.slack.com/scopes",
+  "auth_docs": "https://api.slack.com/authentication/oauth-v2"
+}

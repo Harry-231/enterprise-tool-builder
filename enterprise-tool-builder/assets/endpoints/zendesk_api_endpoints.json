@@ -1,0 +1,1013 @@
+{
+  "service": "Zendesk Support REST API",
+  "service_key": "zendesk",
+  "base_url": "https://{subdomain}.zendesk.com/api/v2",
+  "auth_header": "Authorization: Basic <base64(email/token:api_token)>",
+  "total_endpoints": 41,
+  "endpoints_by_tag": {
+    "Groups": [
+      {
+        "method": "GET",
+        "path": "/groups",
+        "operation_id": "listGroups",
+        "summary": "List groups",
+        "description": "",
+        "tags": [
+          "Groups"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/groups",
+        "operation_id": "createGroup",
+        "summary": "Create a group",
+        "description": "",
+        "tags": [
+          "Groups"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/groups/{group_id}",
+        "operation_id": "getGroup",
+        "summary": "Get a group",
+        "description": "",
+        "tags": [
+          "Groups"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PUT",
+        "path": "/groups/{group_id}",
+        "operation_id": "updateGroup",
+        "summary": "Update a group",
+        "description": "",
+        "tags": [
+          "Groups"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/groups/{group_id}",
+        "operation_id": "deleteGroup",
+        "summary": "Delete a group",
+        "description": "",
+        "tags": [
+          "Groups"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Macros": [
+      {
+        "method": "GET",
+        "path": "/macros",
+        "operation_id": "listMacros",
+        "summary": "List macros",
+        "description": "",
+        "tags": [
+          "Macros"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/macros",
+        "operation_id": "createMacro",
+        "summary": "Create a macro",
+        "description": "",
+        "tags": [
+          "Macros"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/macros/{macro_id}",
+        "operation_id": "getMacro",
+        "summary": "Get a macro",
+        "description": "",
+        "tags": [
+          "Macros"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PUT",
+        "path": "/macros/{macro_id}",
+        "operation_id": "updateMacro",
+        "summary": "Update a macro",
+        "description": "",
+        "tags": [
+          "Macros"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/macros/{macro_id}",
+        "operation_id": "deleteMacro",
+        "summary": "Delete a macro",
+        "description": "",
+        "tags": [
+          "Macros"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/macros/{macro_id}/apply",
+        "operation_id": "applyMacro",
+        "summary": "Apply a macro",
+        "description": "",
+        "tags": [
+          "Macros"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Organizations": [
+      {
+        "method": "GET",
+        "path": "/organizations",
+        "operation_id": "listOrganizations",
+        "summary": "List organizations",
+        "description": "",
+        "tags": [
+          "Organizations"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/organizations",
+        "operation_id": "createOrganization",
+        "summary": "Create an organization",
+        "description": "",
+        "tags": [
+          "Organizations"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/organizations/{organization_id}",
+        "operation_id": "getOrganization",
+        "summary": "Get an organization",
+        "description": "",
+        "tags": [
+          "Organizations"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PUT",
+        "path": "/organizations/{organization_id}",
+        "operation_id": "updateOrganization",
+        "summary": "Update an organization",
+        "description": "",
+        "tags": [
+          "Organizations"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/organizations/{organization_id}",
+        "operation_id": "deleteOrganization",
+        "summary": "Delete an organization",
+        "description": "",
+        "tags": [
+          "Organizations"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Search": [
+      {
+        "method": "GET",
+        "path": "/search",
+        "operation_id": "search",
+        "summary": "Search Zendesk",
+        "description": "",
+        "tags": [
+          "Search"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/search/count",
+        "operation_id": "searchCount",
+        "summary": "Get search result count",
+        "description": "",
+        "tags": [
+          "Search"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/search/export",
+        "operation_id": "exportSearch",
+        "summary": "Export search results",
+        "description": "",
+        "tags": [
+          "Search"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Ticket Comments": [
+      {
+        "method": "GET",
+        "path": "/tickets/{ticket_id}/comments",
+        "operation_id": "listTicketComments",
+        "summary": "List comments for a ticket",
+        "description": "",
+        "tags": [
+          "Ticket Comments"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/tickets/{ticket_id}/comments",
+        "operation_id": "createTicketComment",
+        "summary": "Add a comment to a ticket",
+        "description": "",
+        "tags": [
+          "Ticket Comments"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Tickets": [
+      {
+        "method": "GET",
+        "path": "/tickets",
+        "operation_id": "listTickets",
+        "summary": "List all tickets",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/tickets",
+        "operation_id": "createTicket",
+        "summary": "Create a ticket",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/tickets/{ticket_id}",
+        "operation_id": "getTicket",
+        "summary": "Get a ticket",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PUT",
+        "path": "/tickets/{ticket_id}",
+        "operation_id": "updateTicket",
+        "summary": "Update a ticket",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/tickets/{ticket_id}",
+        "operation_id": "deleteTicket",
+        "summary": "Delete a ticket",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PUT",
+        "path": "/tickets/update_many",
+        "operation_id": "bulkUpdateTickets",
+        "summary": "Bulk update tickets",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/tickets/destroy_many",
+        "operation_id": "bulkDeleteTickets",
+        "summary": "Bulk delete tickets",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Users": [
+      {
+        "method": "GET",
+        "path": "/users",
+        "operation_id": "listUsers",
+        "summary": "List users",
+        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/users",
+        "operation_id": "createUser",
+        "summary": "Create a user",
+        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/users/{user_id}",
+        "operation_id": "getUser",
+        "summary": "Get a user",
+        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PUT",
+        "path": "/users/{user_id}",
+        "operation_id": "updateUser",
+        "summary": "Update a user",
+        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/users/{user_id}",
+        "operation_id": "deleteUser",
+        "summary": "Delete a user",
+        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/users/me",
+        "operation_id": "getCurrentUser",
+        "summary": "Get the current user",
+        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/users/search",
+        "operation_id": "searchUsers",
+        "summary": "Search users",
+        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Views": [
+      {
+        "method": "GET",
+        "path": "/views",
+        "operation_id": "listViews",
+        "summary": "List views",
+        "description": "",
+        "tags": [
+          "Views"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/views",
+        "operation_id": "createView",
+        "summary": "Create a view",
+        "description": "",
+        "tags": [
+          "Views"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/views/{view_id}",
+        "operation_id": "getView",
+        "summary": "Get a view",
+        "description": "",
+        "tags": [
+          "Views"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PUT",
+        "path": "/views/{view_id}",
+        "operation_id": "updateView",
+        "summary": "Update a view",
+        "description": "",
+        "tags": [
+          "Views"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/views/{view_id}",
+        "operation_id": "deleteView",
+        "summary": "Delete a view",
+        "description": "",
+        "tags": [
+          "Views"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/views/{view_id}/tickets",
+        "operation_id": "getViewTickets",
+        "summary": "Get tickets in a view",
+        "description": "",
+        "tags": [
+          "Views"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ]
+  },
+  "all_endpoints": [
+    {
+      "method": "GET",
+      "path": "/tickets",
+      "operation_id": "listTickets",
+      "summary": "List all tickets",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/tickets",
+      "operation_id": "createTicket",
+      "summary": "Create a ticket",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/{ticket_id}",
+      "operation_id": "getTicket",
+      "summary": "Get a ticket",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PUT",
+      "path": "/tickets/{ticket_id}",
+      "operation_id": "updateTicket",
+      "summary": "Update a ticket",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/tickets/{ticket_id}",
+      "operation_id": "deleteTicket",
+      "summary": "Delete a ticket",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/{ticket_id}/comments",
+      "operation_id": "listTicketComments",
+      "summary": "List comments for a ticket",
+      "description": "",
+      "tags": [
+        "Ticket Comments"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/tickets/{ticket_id}/comments",
+      "operation_id": "createTicketComment",
+      "summary": "Add a comment to a ticket",
+      "description": "",
+      "tags": [
+        "Ticket Comments"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PUT",
+      "path": "/tickets/update_many",
+      "operation_id": "bulkUpdateTickets",
+      "summary": "Bulk update tickets",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/tickets/destroy_many",
+      "operation_id": "bulkDeleteTickets",
+      "summary": "Bulk delete tickets",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/users",
+      "operation_id": "listUsers",
+      "summary": "List users",
+      "description": "",
+      "tags": [
+        "Users"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/users",
+      "operation_id": "createUser",
+      "summary": "Create a user",
+      "description": "",
+      "tags": [
+        "Users"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/users/{user_id}",
+      "operation_id": "getUser",
+      "summary": "Get a user",
+      "description": "",
+      "tags": [
+        "Users"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PUT",
+      "path": "/users/{user_id}",
+      "operation_id": "updateUser",
+      "summary": "Update a user",
+      "description": "",
+      "tags": [
+        "Users"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/{user_id}",
+      "operation_id": "deleteUser",
+      "summary": "Delete a user",
+      "description": "",
+      "tags": [
+        "Users"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/users/me",
+      "operation_id": "getCurrentUser",
+      "summary": "Get the current user",
+      "description": "",
+      "tags": [
+        "Users"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/users/search",
+      "operation_id": "searchUsers",
+      "summary": "Search users",
+      "description": "",
+      "tags": [
+        "Users"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/groups",
+      "operation_id": "listGroups",
+      "summary": "List groups",
+      "description": "",
+      "tags": [
+        "Groups"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/groups",
+      "operation_id": "createGroup",
+      "summary": "Create a group",
+      "description": "",
+      "tags": [
+        "Groups"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/groups/{group_id}",
+      "operation_id": "getGroup",
+      "summary": "Get a group",
+      "description": "",
+      "tags": [
+        "Groups"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PUT",
+      "path": "/groups/{group_id}",
+      "operation_id": "updateGroup",
+      "summary": "Update a group",
+      "description": "",
+      "tags": [
+        "Groups"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/groups/{group_id}",
+      "operation_id": "deleteGroup",
+      "summary": "Delete a group",
+      "description": "",
+      "tags": [
+        "Groups"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/organizations",
+      "operation_id": "listOrganizations",
+      "summary": "List organizations",
+      "description": "",
+      "tags": [
+        "Organizations"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/organizations",
+      "operation_id": "createOrganization",
+      "summary": "Create an organization",
+      "description": "",
+      "tags": [
+        "Organizations"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{organization_id}",
+      "operation_id": "getOrganization",
+      "summary": "Get an organization",
+      "description": "",
+      "tags": [
+        "Organizations"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{organization_id}",
+      "operation_id": "updateOrganization",
+      "summary": "Update an organization",
+      "description": "",
+      "tags": [
+        "Organizations"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/organizations/{organization_id}",
+      "operation_id": "deleteOrganization",
+      "summary": "Delete an organization",
+      "description": "",
+      "tags": [
+        "Organizations"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/search",
+      "operation_id": "search",
+      "summary": "Search Zendesk",
+      "description": "",
+      "tags": [
+        "Search"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/search/count",
+      "operation_id": "searchCount",
+      "summary": "Get search result count",
+      "description": "",
+      "tags": [
+        "Search"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/search/export",
+      "operation_id": "exportSearch",
+      "summary": "Export search results",
+      "description": "",
+      "tags": [
+        "Search"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/views",
+      "operation_id": "listViews",
+      "summary": "List views",
+      "description": "",
+      "tags": [
+        "Views"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/views",
+      "operation_id": "createView",
+      "summary": "Create a view",
+      "description": "",
+      "tags": [
+        "Views"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/views/{view_id}",
+      "operation_id": "getView",
+      "summary": "Get a view",
+      "description": "",
+      "tags": [
+        "Views"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PUT",
+      "path": "/views/{view_id}",
+      "operation_id": "updateView",
+      "summary": "Update a view",
+      "description": "",
+      "tags": [
+        "Views"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/views/{view_id}",
+      "operation_id": "deleteView",
+      "summary": "Delete a view",
+      "description": "",
+      "tags": [
+        "Views"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/views/{view_id}/tickets",
+      "operation_id": "getViewTickets",
+      "summary": "Get tickets in a view",
+      "description": "",
+      "tags": [
+        "Views"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/macros",
+      "operation_id": "listMacros",
+      "summary": "List macros",
+      "description": "",
+      "tags": [
+        "Macros"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/macros",
+      "operation_id": "createMacro",
+      "summary": "Create a macro",
+      "description": "",
+      "tags": [
+        "Macros"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/macros/{macro_id}",
+      "operation_id": "getMacro",
+      "summary": "Get a macro",
+      "description": "",
+      "tags": [
+        "Macros"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PUT",
+      "path": "/macros/{macro_id}",
+      "operation_id": "updateMacro",
+      "summary": "Update a macro",
+      "description": "",
+      "tags": [
+        "Macros"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/macros/{macro_id}",
+      "operation_id": "deleteMacro",
+      "summary": "Delete a macro",
+      "description": "",
+      "tags": [
+        "Macros"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/macros/{macro_id}/apply",
+      "operation_id": "applyMacro",
+      "summary": "Apply a macro",
+      "description": "",
+      "tags": [
+        "Macros"
+      ],
+      "deprecated": false,
+      "parameters": []
+    }
+  ],
+  "api_reference": "https://developer.zendesk.com/api-reference/",
+  "auth_docs": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/"
+}

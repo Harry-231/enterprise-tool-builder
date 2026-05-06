@@ -1,0 +1,556 @@
+{
+  "service": "ServiceNow REST API (Table API)",
+  "service_key": "servicenow",
+  "base_url": "https://{instance}.service-now.com",
+  "auth_header": "Authorization: Basic <base64(username:password)> or Authorization: Bearer <oauth_token>",
+  "total_endpoints": 22,
+  "endpoints_by_tag": {
+    "Aggregate API": [
+      {
+        "method": "GET",
+        "path": "/api/now/stats/{tableName}",
+        "operation_id": "getAggregateStats",
+        "summary": "Get aggregate statistics for a table",
+        "description": "",
+        "tags": [
+          "Aggregate API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Attachment API": [
+      {
+        "method": "GET",
+        "path": "/api/now/attachment",
+        "operation_id": "listAttachments",
+        "summary": "Retrieve all attachments",
+        "description": "",
+        "tags": [
+          "Attachment API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/api/now/attachment/file",
+        "operation_id": "uploadAttachment",
+        "summary": "Upload a file attachment",
+        "description": "",
+        "tags": [
+          "Attachment API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/api/now/attachment/{sys_id}",
+        "operation_id": "getAttachment",
+        "summary": "Retrieve attachment metadata",
+        "description": "",
+        "tags": [
+          "Attachment API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/api/now/attachment/{sys_id}/file",
+        "operation_id": "downloadAttachment",
+        "summary": "Download attachment file",
+        "description": "",
+        "tags": [
+          "Attachment API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/api/now/attachment/{sys_id}",
+        "operation_id": "deleteAttachment",
+        "summary": "Delete an attachment",
+        "description": "",
+        "tags": [
+          "Attachment API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "CI/CD API": [
+      {
+        "method": "POST",
+        "path": "/api/sn_cicd/app_repo/install",
+        "operation_id": "installApp",
+        "summary": "Install an application from a source control repo",
+        "description": "",
+        "tags": [
+          "CI/CD API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/api/sn_cicd/app_repo/publish",
+        "operation_id": "publishApp",
+        "summary": "Publish an application to a source control repo",
+        "description": "",
+        "tags": [
+          "CI/CD API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/api/sn_cicd/sc/apply_changes",
+        "operation_id": "applyChanges",
+        "summary": "Apply changes from a source control branch",
+        "description": "",
+        "tags": [
+          "CI/CD API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/api/sn_cicd/plugin/{pluginID}/activate",
+        "operation_id": "activatePlugin",
+        "summary": "Activate a plugin",
+        "description": "",
+        "tags": [
+          "CI/CD API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/api/sn_cicd/plugin/{pluginID}/rollback",
+        "operation_id": "rollbackPlugin",
+        "summary": "Rollback a plugin to a previous version",
+        "description": "",
+        "tags": [
+          "CI/CD API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/api/sn_cicd/progress/{progressID}",
+        "operation_id": "getProgress",
+        "summary": "Get the progress of a CI/CD operation",
+        "description": "",
+        "tags": [
+          "CI/CD API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Import Set API": [
+      {
+        "method": "POST",
+        "path": "/api/now/import/{stagingTableName}",
+        "operation_id": "importRecord",
+        "summary": "Insert a record into a staging table",
+        "description": "",
+        "tags": [
+          "Import Set API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/api/now/import/{stagingTableName}/insertMultiple",
+        "operation_id": "importMultiple",
+        "summary": "Insert multiple records into a staging table",
+        "description": "",
+        "tags": [
+          "Import Set API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Password Reset": [
+      {
+        "method": "POST",
+        "path": "/api/now/pa/reset_user_password",
+        "operation_id": "resetPassword",
+        "summary": "Reset a user's password",
+        "description": "",
+        "tags": [
+          "Password Reset"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Scripted REST": [
+      {
+        "method": "GET",
+        "path": "/api/now/ui/scripted_rest_apis",
+        "operation_id": "listScriptedAPIs",
+        "summary": "List scripted REST APIs",
+        "description": "",
+        "tags": [
+          "Scripted REST"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Table API": [
+      {
+        "method": "GET",
+        "path": "/api/now/table/{tableName}",
+        "operation_id": "getRecords",
+        "summary": "Retrieve multiple records from a table",
+        "description": "",
+        "tags": [
+          "Table API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/api/now/table/{tableName}",
+        "operation_id": "createRecord",
+        "summary": "Create a record in a table",
+        "description": "",
+        "tags": [
+          "Table API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/api/now/table/{tableName}/{sys_id}",
+        "operation_id": "getRecord",
+        "summary": "Retrieve a record by sys_id",
+        "description": "",
+        "tags": [
+          "Table API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PUT",
+        "path": "/api/now/table/{tableName}/{sys_id}",
+        "operation_id": "replaceRecord",
+        "summary": "Replace a record by sys_id",
+        "description": "",
+        "tags": [
+          "Table API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/now/table/{tableName}/{sys_id}",
+        "operation_id": "updateRecord",
+        "summary": "Update a record by sys_id",
+        "description": "",
+        "tags": [
+          "Table API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/api/now/table/{tableName}/{sys_id}",
+        "operation_id": "deleteRecord",
+        "summary": "Delete a record by sys_id",
+        "description": "",
+        "tags": [
+          "Table API"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ]
+  },
+  "all_endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/now/table/{tableName}",
+      "operation_id": "getRecords",
+      "summary": "Retrieve multiple records from a table",
+      "description": "",
+      "tags": [
+        "Table API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/now/table/{tableName}",
+      "operation_id": "createRecord",
+      "summary": "Create a record in a table",
+      "description": "",
+      "tags": [
+        "Table API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/now/table/{tableName}/{sys_id}",
+      "operation_id": "getRecord",
+      "summary": "Retrieve a record by sys_id",
+      "description": "",
+      "tags": [
+        "Table API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PUT",
+      "path": "/api/now/table/{tableName}/{sys_id}",
+      "operation_id": "replaceRecord",
+      "summary": "Replace a record by sys_id",
+      "description": "",
+      "tags": [
+        "Table API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/now/table/{tableName}/{sys_id}",
+      "operation_id": "updateRecord",
+      "summary": "Update a record by sys_id",
+      "description": "",
+      "tags": [
+        "Table API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/now/table/{tableName}/{sys_id}",
+      "operation_id": "deleteRecord",
+      "summary": "Delete a record by sys_id",
+      "description": "",
+      "tags": [
+        "Table API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/now/stats/{tableName}",
+      "operation_id": "getAggregateStats",
+      "summary": "Get aggregate statistics for a table",
+      "description": "",
+      "tags": [
+        "Aggregate API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/now/import/{stagingTableName}",
+      "operation_id": "importRecord",
+      "summary": "Insert a record into a staging table",
+      "description": "",
+      "tags": [
+        "Import Set API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/now/import/{stagingTableName}/insertMultiple",
+      "operation_id": "importMultiple",
+      "summary": "Insert multiple records into a staging table",
+      "description": "",
+      "tags": [
+        "Import Set API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/now/attachment",
+      "operation_id": "listAttachments",
+      "summary": "Retrieve all attachments",
+      "description": "",
+      "tags": [
+        "Attachment API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/now/attachment/file",
+      "operation_id": "uploadAttachment",
+      "summary": "Upload a file attachment",
+      "description": "",
+      "tags": [
+        "Attachment API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/now/attachment/{sys_id}",
+      "operation_id": "getAttachment",
+      "summary": "Retrieve attachment metadata",
+      "description": "",
+      "tags": [
+        "Attachment API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/now/attachment/{sys_id}/file",
+      "operation_id": "downloadAttachment",
+      "summary": "Download attachment file",
+      "description": "",
+      "tags": [
+        "Attachment API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/now/attachment/{sys_id}",
+      "operation_id": "deleteAttachment",
+      "summary": "Delete an attachment",
+      "description": "",
+      "tags": [
+        "Attachment API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/sn_cicd/app_repo/install",
+      "operation_id": "installApp",
+      "summary": "Install an application from a source control repo",
+      "description": "",
+      "tags": [
+        "CI/CD API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/sn_cicd/app_repo/publish",
+      "operation_id": "publishApp",
+      "summary": "Publish an application to a source control repo",
+      "description": "",
+      "tags": [
+        "CI/CD API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/sn_cicd/sc/apply_changes",
+      "operation_id": "applyChanges",
+      "summary": "Apply changes from a source control branch",
+      "description": "",
+      "tags": [
+        "CI/CD API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/sn_cicd/plugin/{pluginID}/activate",
+      "operation_id": "activatePlugin",
+      "summary": "Activate a plugin",
+      "description": "",
+      "tags": [
+        "CI/CD API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/sn_cicd/plugin/{pluginID}/rollback",
+      "operation_id": "rollbackPlugin",
+      "summary": "Rollback a plugin to a previous version",
+      "description": "",
+      "tags": [
+        "CI/CD API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/sn_cicd/progress/{progressID}",
+      "operation_id": "getProgress",
+      "summary": "Get the progress of a CI/CD operation",
+      "description": "",
+      "tags": [
+        "CI/CD API"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/now/ui/scripted_rest_apis",
+      "operation_id": "listScriptedAPIs",
+      "summary": "List scripted REST APIs",
+      "description": "",
+      "tags": [
+        "Scripted REST"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/now/pa/reset_user_password",
+      "operation_id": "resetPassword",
+      "summary": "Reset a user's password",
+      "description": "",
+      "tags": [
+        "Password Reset"
+      ],
+      "deprecated": false,
+      "parameters": []
+    }
+  ],
+  "table_api_docs": "https://docs.servicenow.com/bundle/utah-application-development/page/integrate/inbound-rest/concept/c_TableAPI.html",
+  "rest_explorer": "https://{instance}.service-now.com/api_doc.do",
+  "auth_docs": "https://www.servicenow.com/docs/r/washingtondc/platform-security/authentication/token-based-auth-api.html"
+}

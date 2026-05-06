@@ -1,0 +1,777 @@
+{
+  "service": "Salesforce REST API",
+  "service_key": "salesforce",
+  "base_url": "https://{instance}.salesforce.com/services/data/v{version}",
+  "auth_header": "Authorization: Bearer <oauth_access_token>",
+  "total_endpoints": 31,
+  "endpoints_by_tag": {
+    "Bulk": [
+      {
+        "method": "POST",
+        "path": "/services/data/v{version}/jobs/ingest",
+        "operation_id": "createBulkIngestJob",
+        "summary": "Create a bulk ingest job",
+        "description": "",
+        "tags": [
+          "Bulk"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/jobs/ingest",
+        "operation_id": "listBulkIngestJobs",
+        "summary": "List bulk ingest jobs",
+        "description": "",
+        "tags": [
+          "Bulk"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/jobs/ingest/{jobId}",
+        "operation_id": "getBulkJob",
+        "summary": "Get info about a bulk ingest job",
+        "description": "",
+        "tags": [
+          "Bulk"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/services/data/v{version}/jobs/ingest/{jobId}",
+        "operation_id": "closeBulkJob",
+        "summary": "Close or abort a bulk ingest job",
+        "description": "",
+        "tags": [
+          "Bulk"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/services/data/v{version}/jobs/ingest/{jobId}",
+        "operation_id": "deleteBulkJob",
+        "summary": "Delete a bulk ingest job",
+        "description": "",
+        "tags": [
+          "Bulk"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Chatter": [
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/chatter/feeds/news/{userId}/feed-elements",
+        "operation_id": "getChatterNewsFeed",
+        "summary": "Get Chatter news feed",
+        "description": "",
+        "tags": [
+          "Chatter"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/services/data/v{version}/chatter/feed-elements",
+        "operation_id": "postChatterFeedElement",
+        "summary": "Post to Chatter",
+        "description": "",
+        "tags": [
+          "Chatter"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Composite": [
+      {
+        "method": "POST",
+        "path": "/services/data/v{version}/composite/",
+        "operation_id": "compositeRequest",
+        "summary": "Execute a composite request",
+        "description": "",
+        "tags": [
+          "Composite"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/services/data/v{version}/composite/batch",
+        "operation_id": "compositeBatch",
+        "summary": "Execute a composite batch request",
+        "description": "",
+        "tags": [
+          "Composite"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/services/data/v{version}/composite/sobjects",
+        "operation_id": "compositeSObjects",
+        "summary": "Create multiple records in one request",
+        "description": "",
+        "tags": [
+          "Composite"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/services/data/v{version}/composite/sobjects",
+        "operation_id": "updateMultipleRecords",
+        "summary": "Update multiple records in one request",
+        "description": "",
+        "tags": [
+          "Composite"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Discovery": [
+      {
+        "method": "GET",
+        "path": "/",
+        "operation_id": "getVersions",
+        "summary": "List available Salesforce REST API versions",
+        "description": "",
+        "tags": [
+          "Discovery"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/",
+        "operation_id": "getApiVersions",
+        "summary": "List available API versions",
+        "description": "",
+        "tags": [
+          "Discovery"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/",
+        "operation_id": "getResources",
+        "summary": "List available resources for the specified API version",
+        "description": "",
+        "tags": [
+          "Discovery"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Metadata": [
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/limits/",
+        "operation_id": "getApiLimits",
+        "summary": "Get API usage limits",
+        "description": "",
+        "tags": [
+          "Metadata"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/recent/",
+        "operation_id": "getRecentlyViewedItems",
+        "summary": "Get recently viewed items",
+        "description": "",
+        "tags": [
+          "Metadata"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "SOQL": [
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/query/",
+        "operation_id": "soqlQuery",
+        "summary": "Execute a SOQL query",
+        "description": "",
+        "tags": [
+          "SOQL"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/query/{id}",
+        "operation_id": "soqlQueryMore",
+        "summary": "Get next batch of query results",
+        "description": "",
+        "tags": [
+          "SOQL"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/queryAll/",
+        "operation_id": "soqlQueryAll",
+        "summary": "Execute a SOQL queryAll (includes deleted/archived)",
+        "description": "",
+        "tags": [
+          "SOQL"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "SObjects": [
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/sobjects/",
+        "operation_id": "listSObjects",
+        "summary": "List all SObjects",
+        "description": "",
+        "tags": [
+          "SObjects"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/sobjects/{sObjectName}/",
+        "operation_id": "describeSObject",
+        "summary": "Get SObject metadata",
+        "description": "",
+        "tags": [
+          "SObjects"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/services/data/v{version}/sobjects/{sObjectName}/",
+        "operation_id": "createRecord",
+        "summary": "Create an SObject record",
+        "description": "",
+        "tags": [
+          "SObjects"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/sobjects/{sObjectName}/{id}",
+        "operation_id": "getRecord",
+        "summary": "Get an SObject record by ID",
+        "description": "",
+        "tags": [
+          "SObjects"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/services/data/v{version}/sobjects/{sObjectName}/{id}",
+        "operation_id": "updateRecord",
+        "summary": "Update an SObject record",
+        "description": "",
+        "tags": [
+          "SObjects"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/services/data/v{version}/sobjects/{sObjectName}/{id}",
+        "operation_id": "deleteRecord",
+        "summary": "Delete an SObject record",
+        "description": "",
+        "tags": [
+          "SObjects"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/sobjects/{sObjectName}/describe/",
+        "operation_id": "fullDescribeSObject",
+        "summary": "Get full SObject description",
+        "description": "",
+        "tags": [
+          "SObjects"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Search": [
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/search/",
+        "operation_id": "soqlSearch",
+        "summary": "Execute a SOSL search",
+        "description": "",
+        "tags": [
+          "Search"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/search/scopeOrder",
+        "operation_id": "searchScopeOrder",
+        "summary": "Return default search scope order",
+        "description": "",
+        "tags": [
+          "Search"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/search/layout",
+        "operation_id": "searchResultLayout",
+        "summary": "Return search result layout",
+        "description": "",
+        "tags": [
+          "Search"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Tooling": [
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/tooling/sobjects/",
+        "operation_id": "listToolingSObjects",
+        "summary": "List tooling API SObjects",
+        "description": "",
+        "tags": [
+          "Tooling"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/services/data/v{version}/tooling/query/",
+        "operation_id": "toolingQuery",
+        "summary": "Execute a tooling API query",
+        "description": "",
+        "tags": [
+          "Tooling"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ]
+  },
+  "all_endpoints": [
+    {
+      "method": "GET",
+      "path": "/",
+      "operation_id": "getVersions",
+      "summary": "List available Salesforce REST API versions",
+      "description": "",
+      "tags": [
+        "Discovery"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/",
+      "operation_id": "getApiVersions",
+      "summary": "List available API versions",
+      "description": "",
+      "tags": [
+        "Discovery"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/",
+      "operation_id": "getResources",
+      "summary": "List available resources for the specified API version",
+      "description": "",
+      "tags": [
+        "Discovery"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/sobjects/",
+      "operation_id": "listSObjects",
+      "summary": "List all SObjects",
+      "description": "",
+      "tags": [
+        "SObjects"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/sobjects/{sObjectName}/",
+      "operation_id": "describeSObject",
+      "summary": "Get SObject metadata",
+      "description": "",
+      "tags": [
+        "SObjects"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/services/data/v{version}/sobjects/{sObjectName}/",
+      "operation_id": "createRecord",
+      "summary": "Create an SObject record",
+      "description": "",
+      "tags": [
+        "SObjects"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/sobjects/{sObjectName}/{id}",
+      "operation_id": "getRecord",
+      "summary": "Get an SObject record by ID",
+      "description": "",
+      "tags": [
+        "SObjects"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/services/data/v{version}/sobjects/{sObjectName}/{id}",
+      "operation_id": "updateRecord",
+      "summary": "Update an SObject record",
+      "description": "",
+      "tags": [
+        "SObjects"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/services/data/v{version}/sobjects/{sObjectName}/{id}",
+      "operation_id": "deleteRecord",
+      "summary": "Delete an SObject record",
+      "description": "",
+      "tags": [
+        "SObjects"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/sobjects/{sObjectName}/describe/",
+      "operation_id": "fullDescribeSObject",
+      "summary": "Get full SObject description",
+      "description": "",
+      "tags": [
+        "SObjects"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/query/",
+      "operation_id": "soqlQuery",
+      "summary": "Execute a SOQL query",
+      "description": "",
+      "tags": [
+        "SOQL"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/query/{id}",
+      "operation_id": "soqlQueryMore",
+      "summary": "Get next batch of query results",
+      "description": "",
+      "tags": [
+        "SOQL"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/queryAll/",
+      "operation_id": "soqlQueryAll",
+      "summary": "Execute a SOQL queryAll (includes deleted/archived)",
+      "description": "",
+      "tags": [
+        "SOQL"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/search/",
+      "operation_id": "soqlSearch",
+      "summary": "Execute a SOSL search",
+      "description": "",
+      "tags": [
+        "Search"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/search/scopeOrder",
+      "operation_id": "searchScopeOrder",
+      "summary": "Return default search scope order",
+      "description": "",
+      "tags": [
+        "Search"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/search/layout",
+      "operation_id": "searchResultLayout",
+      "summary": "Return search result layout",
+      "description": "",
+      "tags": [
+        "Search"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/services/data/v{version}/composite/",
+      "operation_id": "compositeRequest",
+      "summary": "Execute a composite request",
+      "description": "",
+      "tags": [
+        "Composite"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/services/data/v{version}/composite/batch",
+      "operation_id": "compositeBatch",
+      "summary": "Execute a composite batch request",
+      "description": "",
+      "tags": [
+        "Composite"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/services/data/v{version}/composite/sobjects",
+      "operation_id": "compositeSObjects",
+      "summary": "Create multiple records in one request",
+      "description": "",
+      "tags": [
+        "Composite"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/services/data/v{version}/composite/sobjects",
+      "operation_id": "updateMultipleRecords",
+      "summary": "Update multiple records in one request",
+      "description": "",
+      "tags": [
+        "Composite"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/services/data/v{version}/jobs/ingest",
+      "operation_id": "createBulkIngestJob",
+      "summary": "Create a bulk ingest job",
+      "description": "",
+      "tags": [
+        "Bulk"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/jobs/ingest",
+      "operation_id": "listBulkIngestJobs",
+      "summary": "List bulk ingest jobs",
+      "description": "",
+      "tags": [
+        "Bulk"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/jobs/ingest/{jobId}",
+      "operation_id": "getBulkJob",
+      "summary": "Get info about a bulk ingest job",
+      "description": "",
+      "tags": [
+        "Bulk"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/services/data/v{version}/jobs/ingest/{jobId}",
+      "operation_id": "closeBulkJob",
+      "summary": "Close or abort a bulk ingest job",
+      "description": "",
+      "tags": [
+        "Bulk"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/services/data/v{version}/jobs/ingest/{jobId}",
+      "operation_id": "deleteBulkJob",
+      "summary": "Delete a bulk ingest job",
+      "description": "",
+      "tags": [
+        "Bulk"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/chatter/feeds/news/{userId}/feed-elements",
+      "operation_id": "getChatterNewsFeed",
+      "summary": "Get Chatter news feed",
+      "description": "",
+      "tags": [
+        "Chatter"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/services/data/v{version}/chatter/feed-elements",
+      "operation_id": "postChatterFeedElement",
+      "summary": "Post to Chatter",
+      "description": "",
+      "tags": [
+        "Chatter"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/limits/",
+      "operation_id": "getApiLimits",
+      "summary": "Get API usage limits",
+      "description": "",
+      "tags": [
+        "Metadata"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/recent/",
+      "operation_id": "getRecentlyViewedItems",
+      "summary": "Get recently viewed items",
+      "description": "",
+      "tags": [
+        "Metadata"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/tooling/sobjects/",
+      "operation_id": "listToolingSObjects",
+      "summary": "List tooling API SObjects",
+      "description": "",
+      "tags": [
+        "Tooling"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/services/data/v{version}/tooling/query/",
+      "operation_id": "toolingQuery",
+      "summary": "Execute a tooling API query",
+      "description": "",
+      "tags": [
+        "Tooling"
+      ],
+      "deprecated": false,
+      "parameters": []
+    }
+  ],
+  "api_docs": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest.htm",
+  "auth_docs": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm",
+  "token_endpoint": "https://login.salesforce.com/services/oauth2/token",
+  "auth_endpoint": "https://login.salesforce.com/services/oauth2/authorize"
+}

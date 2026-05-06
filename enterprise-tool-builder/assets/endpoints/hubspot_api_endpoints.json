@@ -1,0 +1,870 @@
+{
+  "service": "HubSpot CRM & Platform REST API",
+  "service_key": "hubspot",
+  "base_url": "https://api.hubapi.com",
+  "auth_header": "Authorization: Bearer <private_app_access_token>",
+  "total_endpoints": 35,
+  "endpoints_by_tag": {
+    "Associations": [
+      {
+        "method": "GET",
+        "path": "/crm/v4/objects/{objectType}/{objectId}/associations/{toObjectType}",
+        "operation_id": "getAssociations",
+        "summary": "Get associations",
+        "description": "",
+        "tags": [
+          "Associations"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PUT",
+        "path": "/crm/v4/objects/{objectType}/{objectId}/associations/{toObjectType}/{toObjectId}",
+        "operation_id": "createAssociation",
+        "summary": "Create association",
+        "description": "",
+        "tags": [
+          "Associations"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/crm/v4/objects/{objectType}/{objectId}/associations/{toObjectType}/{toObjectId}",
+        "operation_id": "deleteAssociation",
+        "summary": "Delete association",
+        "description": "",
+        "tags": [
+          "Associations"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Companies": [
+      {
+        "method": "GET",
+        "path": "/crm/v3/objects/companies",
+        "operation_id": "getCompanies",
+        "summary": "Get all companies",
+        "description": "",
+        "tags": [
+          "Companies"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/crm/v3/objects/companies",
+        "operation_id": "createCompany",
+        "summary": "Create a company",
+        "description": "",
+        "tags": [
+          "Companies"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/crm/v3/objects/companies/{companyId}",
+        "operation_id": "getCompanyById",
+        "summary": "Get company by ID",
+        "description": "",
+        "tags": [
+          "Companies"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/crm/v3/objects/companies/{companyId}",
+        "operation_id": "updateCompany",
+        "summary": "Update a company",
+        "description": "",
+        "tags": [
+          "Companies"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/crm/v3/objects/companies/{companyId}",
+        "operation_id": "deleteCompany",
+        "summary": "Delete a company",
+        "description": "",
+        "tags": [
+          "Companies"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Contacts": [
+      {
+        "method": "GET",
+        "path": "/crm/v3/objects/contacts",
+        "operation_id": "getContacts",
+        "summary": "Get all contacts",
+        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/crm/v3/objects/contacts",
+        "operation_id": "createContact",
+        "summary": "Create a contact",
+        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/crm/v3/objects/contacts/{contactId}",
+        "operation_id": "getContactById",
+        "summary": "Get contact by ID",
+        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/crm/v3/objects/contacts/{contactId}",
+        "operation_id": "updateContact",
+        "summary": "Update a contact",
+        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/crm/v3/objects/contacts/{contactId}",
+        "operation_id": "deleteContact",
+        "summary": "Delete a contact",
+        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/crm/v3/objects/contacts/search",
+        "operation_id": "searchContacts",
+        "summary": "Search contacts",
+        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Deals": [
+      {
+        "method": "GET",
+        "path": "/crm/v3/objects/deals",
+        "operation_id": "getDeals",
+        "summary": "Get all deals",
+        "description": "",
+        "tags": [
+          "Deals"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/crm/v3/objects/deals",
+        "operation_id": "createDeal",
+        "summary": "Create a deal",
+        "description": "",
+        "tags": [
+          "Deals"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/crm/v3/objects/deals/{dealId}",
+        "operation_id": "getDealById",
+        "summary": "Get deal by ID",
+        "description": "",
+        "tags": [
+          "Deals"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/crm/v3/objects/deals/{dealId}",
+        "operation_id": "updateDeal",
+        "summary": "Update a deal",
+        "description": "",
+        "tags": [
+          "Deals"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/crm/v3/objects/deals/{dealId}",
+        "operation_id": "deleteDeal",
+        "summary": "Delete a deal",
+        "description": "",
+        "tags": [
+          "Deals"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Pipelines": [
+      {
+        "method": "GET",
+        "path": "/crm/v3/pipelines/{objectType}",
+        "operation_id": "getPipelines",
+        "summary": "Get all pipelines",
+        "description": "",
+        "tags": [
+          "Pipelines"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/crm/v3/pipelines/{objectType}",
+        "operation_id": "createPipeline",
+        "summary": "Create a pipeline",
+        "description": "",
+        "tags": [
+          "Pipelines"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/crm/v3/pipelines/{objectType}/{pipelineId}",
+        "operation_id": "getPipelineById",
+        "summary": "Get pipeline by ID",
+        "description": "",
+        "tags": [
+          "Pipelines"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/crm/v3/pipelines/{objectType}/{pipelineId}",
+        "operation_id": "updatePipeline",
+        "summary": "Update a pipeline",
+        "description": "",
+        "tags": [
+          "Pipelines"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/crm/v3/pipelines/{objectType}/{pipelineId}",
+        "operation_id": "deletePipeline",
+        "summary": "Delete a pipeline",
+        "description": "",
+        "tags": [
+          "Pipelines"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Properties": [
+      {
+        "method": "GET",
+        "path": "/crm/v3/properties/{objectType}",
+        "operation_id": "getProperties",
+        "summary": "Get all properties",
+        "description": "",
+        "tags": [
+          "Properties"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/crm/v3/properties/{objectType}",
+        "operation_id": "createProperty",
+        "summary": "Create a property",
+        "description": "",
+        "tags": [
+          "Properties"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/crm/v3/properties/{objectType}/{propertyName}",
+        "operation_id": "getProperty",
+        "summary": "Get property by name",
+        "description": "",
+        "tags": [
+          "Properties"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/crm/v3/properties/{objectType}/{propertyName}",
+        "operation_id": "updateProperty",
+        "summary": "Update a property",
+        "description": "",
+        "tags": [
+          "Properties"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/crm/v3/properties/{objectType}/{propertyName}",
+        "operation_id": "deleteProperty",
+        "summary": "Delete a property",
+        "description": "",
+        "tags": [
+          "Properties"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Search": [
+      {
+        "method": "POST",
+        "path": "/crm/v3/objects/{objectType}/search",
+        "operation_id": "searchObjects",
+        "summary": "Search CRM objects",
+        "description": "",
+        "tags": [
+          "Search"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ],
+    "Tickets": [
+      {
+        "method": "GET",
+        "path": "/crm/v3/objects/tickets",
+        "operation_id": "getTickets",
+        "summary": "Get all tickets",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "POST",
+        "path": "/crm/v3/objects/tickets",
+        "operation_id": "createTicket",
+        "summary": "Create a ticket",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "GET",
+        "path": "/crm/v3/objects/tickets/{ticketId}",
+        "operation_id": "getTicketById",
+        "summary": "Get ticket by ID",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "PATCH",
+        "path": "/crm/v3/objects/tickets/{ticketId}",
+        "operation_id": "updateTicket",
+        "summary": "Update a ticket",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      },
+      {
+        "method": "DELETE",
+        "path": "/crm/v3/objects/tickets/{ticketId}",
+        "operation_id": "deleteTicket",
+        "summary": "Delete a ticket",
+        "description": "",
+        "tags": [
+          "Tickets"
+        ],
+        "deprecated": false,
+        "parameters": []
+      }
+    ]
+  },
+  "all_endpoints": [
+    {
+      "method": "GET",
+      "path": "/crm/v3/objects/contacts",
+      "operation_id": "getContacts",
+      "summary": "Get all contacts",
+      "description": "",
+      "tags": [
+        "Contacts"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/crm/v3/objects/contacts",
+      "operation_id": "createContact",
+      "summary": "Create a contact",
+      "description": "",
+      "tags": [
+        "Contacts"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/objects/contacts/{contactId}",
+      "operation_id": "getContactById",
+      "summary": "Get contact by ID",
+      "description": "",
+      "tags": [
+        "Contacts"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/crm/v3/objects/contacts/{contactId}",
+      "operation_id": "updateContact",
+      "summary": "Update a contact",
+      "description": "",
+      "tags": [
+        "Contacts"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/crm/v3/objects/contacts/{contactId}",
+      "operation_id": "deleteContact",
+      "summary": "Delete a contact",
+      "description": "",
+      "tags": [
+        "Contacts"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/crm/v3/objects/contacts/search",
+      "operation_id": "searchContacts",
+      "summary": "Search contacts",
+      "description": "",
+      "tags": [
+        "Contacts"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/objects/companies",
+      "operation_id": "getCompanies",
+      "summary": "Get all companies",
+      "description": "",
+      "tags": [
+        "Companies"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/crm/v3/objects/companies",
+      "operation_id": "createCompany",
+      "summary": "Create a company",
+      "description": "",
+      "tags": [
+        "Companies"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/objects/companies/{companyId}",
+      "operation_id": "getCompanyById",
+      "summary": "Get company by ID",
+      "description": "",
+      "tags": [
+        "Companies"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/crm/v3/objects/companies/{companyId}",
+      "operation_id": "updateCompany",
+      "summary": "Update a company",
+      "description": "",
+      "tags": [
+        "Companies"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/crm/v3/objects/companies/{companyId}",
+      "operation_id": "deleteCompany",
+      "summary": "Delete a company",
+      "description": "",
+      "tags": [
+        "Companies"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/objects/deals",
+      "operation_id": "getDeals",
+      "summary": "Get all deals",
+      "description": "",
+      "tags": [
+        "Deals"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/crm/v3/objects/deals",
+      "operation_id": "createDeal",
+      "summary": "Create a deal",
+      "description": "",
+      "tags": [
+        "Deals"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/objects/deals/{dealId}",
+      "operation_id": "getDealById",
+      "summary": "Get deal by ID",
+      "description": "",
+      "tags": [
+        "Deals"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/crm/v3/objects/deals/{dealId}",
+      "operation_id": "updateDeal",
+      "summary": "Update a deal",
+      "description": "",
+      "tags": [
+        "Deals"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/crm/v3/objects/deals/{dealId}",
+      "operation_id": "deleteDeal",
+      "summary": "Delete a deal",
+      "description": "",
+      "tags": [
+        "Deals"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/objects/tickets",
+      "operation_id": "getTickets",
+      "summary": "Get all tickets",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/crm/v3/objects/tickets",
+      "operation_id": "createTicket",
+      "summary": "Create a ticket",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/objects/tickets/{ticketId}",
+      "operation_id": "getTicketById",
+      "summary": "Get ticket by ID",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/crm/v3/objects/tickets/{ticketId}",
+      "operation_id": "updateTicket",
+      "summary": "Update a ticket",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/crm/v3/objects/tickets/{ticketId}",
+      "operation_id": "deleteTicket",
+      "summary": "Delete a ticket",
+      "description": "",
+      "tags": [
+        "Tickets"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/crm/v3/objects/{objectType}/search",
+      "operation_id": "searchObjects",
+      "summary": "Search CRM objects",
+      "description": "",
+      "tags": [
+        "Search"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/properties/{objectType}",
+      "operation_id": "getProperties",
+      "summary": "Get all properties",
+      "description": "",
+      "tags": [
+        "Properties"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/crm/v3/properties/{objectType}",
+      "operation_id": "createProperty",
+      "summary": "Create a property",
+      "description": "",
+      "tags": [
+        "Properties"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/properties/{objectType}/{propertyName}",
+      "operation_id": "getProperty",
+      "summary": "Get property by name",
+      "description": "",
+      "tags": [
+        "Properties"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/crm/v3/properties/{objectType}/{propertyName}",
+      "operation_id": "updateProperty",
+      "summary": "Update a property",
+      "description": "",
+      "tags": [
+        "Properties"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/crm/v3/properties/{objectType}/{propertyName}",
+      "operation_id": "deleteProperty",
+      "summary": "Delete a property",
+      "description": "",
+      "tags": [
+        "Properties"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v4/objects/{objectType}/{objectId}/associations/{toObjectType}",
+      "operation_id": "getAssociations",
+      "summary": "Get associations",
+      "description": "",
+      "tags": [
+        "Associations"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PUT",
+      "path": "/crm/v4/objects/{objectType}/{objectId}/associations/{toObjectType}/{toObjectId}",
+      "operation_id": "createAssociation",
+      "summary": "Create association",
+      "description": "",
+      "tags": [
+        "Associations"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/crm/v4/objects/{objectType}/{objectId}/associations/{toObjectType}/{toObjectId}",
+      "operation_id": "deleteAssociation",
+      "summary": "Delete association",
+      "description": "",
+      "tags": [
+        "Associations"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/pipelines/{objectType}",
+      "operation_id": "getPipelines",
+      "summary": "Get all pipelines",
+      "description": "",
+      "tags": [
+        "Pipelines"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "POST",
+      "path": "/crm/v3/pipelines/{objectType}",
+      "operation_id": "createPipeline",
+      "summary": "Create a pipeline",
+      "description": "",
+      "tags": [
+        "Pipelines"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "GET",
+      "path": "/crm/v3/pipelines/{objectType}/{pipelineId}",
+      "operation_id": "getPipelineById",
+      "summary": "Get pipeline by ID",
+      "description": "",
+      "tags": [
+        "Pipelines"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "PATCH",
+      "path": "/crm/v3/pipelines/{objectType}/{pipelineId}",
+      "operation_id": "updatePipeline",
+      "summary": "Update a pipeline",
+      "description": "",
+      "tags": [
+        "Pipelines"
+      ],
+      "deprecated": false,
+      "parameters": []
+    },
+    {
+      "method": "DELETE",
+      "path": "/crm/v3/pipelines/{objectType}/{pipelineId}",
+      "operation_id": "deletePipeline",
+      "summary": "Delete a pipeline",
+      "description": "",
+      "tags": [
+        "Pipelines"
+      ],
+      "deprecated": false,
+      "parameters": []
+    }
+  ],
+  "api_reference": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+  "llms_txt": "https://developers.hubspot.com/docs/llms.txt",
+  "auth_docs": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview"
+}
