@@ -1,190 +1,189 @@
 """
-Test a generated tool against live or mock API endpoints.
-
-Validates that a tool works correctly with the target API.
+Smoke-test a generated LangChain tool file.
 """
 
-from typing import Dict, Optional, Any
-from unittest.mock import MagicMock
+from __future__ import annotations
+
+import argparse
+import importlib.util
+import json
+import types
 import sys
+from pathlib import Path
+from typing import Any
 
 
-class ToolTester:
-    """Test individual tools against APIs."""
+def emit(message: str) -> None:
+    """Write diagnostics to stderr."""
+    print(message, file=sys.stderr)
 
-    def __init__(self, use_mock: bool = True):
-        """
-        Initialize tool tester.
 
-        Args:
-            use_mock: If True, use mocked API responses. If False, use real API.
-        """
-        self.use_mock = use_mock
+def parse_key_value(values: list[str] | None) -> dict[str, Any]:
+    """Parse repeated key=value arguments."""
+    parsed: dict[str, Any] = {}
+    for item in values or []:
+        if "=" not in item:
+            raise ValueError(f"Expected key=value argument, received: {item}")
+        key, value = item.split("=", 1)
+        parsed[key] = value
+    return parsed
 
-    def test_tool_with_parameters(
-        self,
-        tool_func,
-        test_params: Dict[str, Any],
-        expected_keys: Optional[list] = None,
-    ) -> bool:
-        """
-        Test a tool with specific parameters.
 
-        Args:
-            tool_func: The tool function to test.
-            test_params: Parameters to pass to the tool.
-            expected_keys: Keys expected in the response.
+def load_module(tool_file: Path):
+    """Load a Python module from a file path."""
+    ensure_runtime_stubs()
+    spec = importlib.util.spec_from_file_location(tool_file.stem, tool_file)
+    if spec is None or spec.loader is None:
+        raise ValueError(f"Unable to import tool file: {tool_file}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
-        Returns:
-            True if test passes.
-        """
-        print(f"Testing tool with parameters: {test_params}")
 
+def ensure_runtime_stubs() -> None:
+    """Provide minimal runtime stubs when optional deps are unavailable."""
+    if "langchain.tools" not in sys.modules:
+        langchain_module = sys.modules.setdefault("langchain", types.ModuleType("langchain"))
+        tools_module = types.ModuleType("langchain.tools")
+
+        def tool_decorator(*decorator_args, **decorator_kwargs):
+            if decorator_args and callable(decorator_args[0]) and not decorator_kwargs:
+                return decorator_args[0]
+
+            def wrap(func):
+                return func
+
+            return wrap
+
+        tools_module.tool = tool_decorator
+        sys.modules["langchain.tools"] = tools_module
+        setattr(langchain_module, "tools", tools_module)
+
+
+def normalize_result(result: Any) -> Any:
+    """Decode JSON strings when possible."""
+    if isinstance(result, str):
         try:
-            result = tool_func(**test_params)
-            print(f"Tool executed successfully")
-            print(f"Result: {result}")
+            return json.loads(result)
+        except json.JSONDecodeError:
+            return result
+    return result
 
-            if expected_keys:
-                # Validate response contains expected keys
-                if isinstance(result, str):
-                    result = eval(result)  # Parse JSON string
 
-                missing_keys = [k for k in expected_keys if k not in result]
-                if missing_keys:
-                    print(f"Warning: Missing expected keys: {missing_keys}")
-                    return False
+def invoke_tool(tool_obj: Any, params: dict[str, Any]) -> Any:
+    """Invoke a plain function or LangChain tool object."""
+    if hasattr(tool_obj, "invoke"):
+        return tool_obj.invoke(params)
+    if callable(tool_obj):
+        return tool_obj(**params)
+    raise ValueError("Target object is not callable and does not implement invoke()")
 
-            return True
 
-        except Exception as e:
-            print(f"Tool test failed: {e}")
-            return False
+def run_smoke_test(
+    tool_file: Path,
+    tool_name: str,
+    params: dict[str, Any],
+    expected_keys: list[str],
+    invalid_params: dict[str, Any] | None,
+) -> dict[str, Any]:
+    """Run success and optional failure-path checks."""
+    module = load_module(tool_file)
+    if not hasattr(module, tool_name):
+        raise ValueError(f"Tool `{tool_name}` not found in {tool_file}")
 
-    def test_error_handling(self, tool_func, invalid_params: Dict) -> bool:
-        """
-        Test that tool handles invalid parameters gracefully.
+    tool_obj = getattr(module, tool_name)
+    result = normalize_result(invoke_tool(tool_obj, params))
+    passed = True
+    missing_keys: list[str] = []
 
-        Args:
-            tool_func: The tool function to test.
-            invalid_params: Invalid parameters to test.
+    if expected_keys:
+        if not isinstance(result, dict):
+            passed = False
+            missing_keys = expected_keys
+        else:
+            missing_keys = [key for key in expected_keys if key not in result]
+            passed = not missing_keys
 
-        Returns:
-            True if error is handled gracefully.
-        """
-        print(f"Testing error handling with invalid parameters...")
-
+    invalid_result: dict[str, Any] | None = None
+    if invalid_params is not None:
         try:
-            result = tool_func(**invalid_params)
-            print(f"Tool did not raise error for invalid params (result: {result})")
-            return False
-        except (ValueError, TypeError, Exception) as e:
-            print(f"Tool correctly raised error: {type(e).__name__}: {e}")
-            return True
+            invoke_tool(tool_obj, invalid_params)
+            invalid_result = {"passed": False, "error": "tool accepted invalid params"}
+            passed = False
+        except Exception as exc:  # Expected path for failure testing
+            invalid_result = {"passed": True, "error_type": type(exc).__name__, "message": str(exc)}
 
-    def test_rate_limiting(self, tool_func, params: Dict, num_calls: int = 5) -> bool:
-        """
-        Test tool behavior under rate limiting.
+    return {
+        "success": passed,
+        "tool_file": str(tool_file),
+        "tool_name": tool_name,
+        "result": result,
+        "missing_keys": missing_keys,
+        "invalid_case": invalid_result,
+    }
 
-        Args:
-            tool_func: The tool function to test.
-            params: Parameters for the tool.
-            num_calls: Number of calls to make.
 
-        Returns:
-            True if rate limiting is handled properly.
-        """
-        print(f"Testing rate limiting with {num_calls} calls...")
+def build_parser() -> argparse.ArgumentParser:
+    """Build CLI args."""
+    parser = argparse.ArgumentParser(
+        description="Smoke-test a generated Python LangChain tool.",
+        epilog=(
+            "Examples:\n"
+            "  python scripts/test_tool.py generated_tools/github_search.py --tool-name github_search "
+            "--param query=langchain --expect-key success --expect-key data\n"
+            "  python scripts/test_tool.py generated_tools/github_search.py --tool-name github_search "
+            "--param query=langchain --invalid-param query="
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument("tool_file", help="Path to the generated Python tool file")
+    parser.add_argument("--tool-name", required=True, help="Tool symbol name inside the module")
+    parser.add_argument("--param", action="append", help="Valid key=value parameter", default=[])
+    parser.add_argument("--invalid-param", action="append", help="Invalid key=value parameter", default=[])
+    parser.add_argument("--expect-key", action="append", help="Key expected in a dict/JSON response", default=[])
+    parser.add_argument(
+        "--format",
+        choices=("json", "text"),
+        default="json",
+        help="Output format for script results",
+    )
+    return parser
 
-        for i in range(num_calls):
-            try:
-                result = tool_func(**params)
-                print(f"Call {i + 1}/{num_calls}: Success")
-            except Exception as e:
-                if "rate limit" in str(e).lower():
-                    print(f"Call {i + 1}/{num_calls}: Rate limited (expected)")
-                    return True
-                else:
-                    print(f"Call {i + 1}/{num_calls}: Unexpected error: {e}")
-                    return False
 
-        print("All calls succeeded (rate limiting not triggered)")
-        return True
+def emit_result(payload: dict[str, Any], output_format: str) -> None:
+    """Render test results."""
+    if output_format == "json":
+        print(json.dumps(payload, indent=2))
+        return
+    print("smoke test passed" if payload["success"] else "smoke test failed")
 
-    def run_test_suite(
-        self,
-        tool_func,
-        test_cases: list,
-    ) -> Dict[str, bool]:
-        """
-        Run a suite of test cases.
 
-        Args:
-            tool_func: The tool function to test.
-            test_cases: List of test case dictionaries.
+def main() -> int:
+    parser = build_parser()
+    args = parser.parse_args()
 
-        Returns:
-            Dictionary with test results.
-        """
-        print(f"\nRunning test suite for tool: {tool_func.__name__}")
-        print("=" * 50)
-
-        results = {}
-
-        for test_case in test_cases:
-            test_name = test_case.get("name", "Unnamed test")
-            test_type = test_case.get("type", "basic")
-
-            print(f"\n{test_name}:")
-
-            if test_type == "basic":
-                results[test_name] = self.test_tool_with_parameters(
-                    tool_func,
-                    test_case.get("params", {}),
-                    test_case.get("expected_keys"),
-                )
-            elif test_type == "error":
-                results[test_name] = self.test_error_handling(
-                    tool_func,
-                    test_case.get("invalid_params", {}),
-                )
-            elif test_type == "rate_limit":
-                results[test_name] = self.test_rate_limiting(
-                    tool_func,
-                    test_case.get("params", {}),
-                    test_case.get("num_calls", 5),
-                )
-
-        # Print summary
-        print("\n" + "=" * 50)
-        print("Test Summary:")
-        passed = sum(1 for v in results.values() if v)
-        total = len(results)
-        print(f"Passed: {passed}/{total}")
-
-        return results
+    try:
+        params = parse_key_value(args.param)
+        invalid_params = parse_key_value(args.invalid_param) if args.invalid_param else None
+        result = run_smoke_test(
+            tool_file=Path(args.tool_file),
+            tool_name=args.tool_name,
+            params=params,
+            expected_keys=args.expect_key,
+            invalid_params=invalid_params,
+        )
+        emit_result(result, args.format)
+        return 0 if result["success"] else 1
+    except FileNotFoundError as exc:
+        emit(str(exc))
+        return 2
+    except ValueError as exc:
+        emit(f"Error: {exc}")
+        return 2
+    except Exception as exc:  # pragma: no cover - defensive CLI guard
+        emit(f"Unexpected error: {exc}")
+        return 1
 
 
 if __name__ == "__main__":
-    # Example usage
-    def sample_tool(query: str = "test") -> str:
-        """Sample tool for testing."""
-        return f'{{"query": "{query}", "result": "success"}}'
-
-    tester = ToolTester(use_mock=True)
-
-    test_cases = [
-        {
-            "name": "Test basic functionality",
-            "type": "basic",
-            "params": {"query": "test"},
-            "expected_keys": ["query", "result"],
-        },
-        {
-            "name": "Test error handling",
-            "type": "error",
-            "invalid_params": {"query": ""},
-        },
-    ]
-
-    results = tester.run_test_suite(sample_tool, test_cases)
+    raise SystemExit(main())

@@ -1,167 +1,155 @@
 """
-Lint and validate generated tools.
-
-Checks for code quality, docstring completeness, type hints, and schema presence.
+Lint generated LangChain tool files for basic structural quality.
 """
 
-import os
+from __future__ import annotations
+
+import argparse
+import json
 import re
+import sys
 from pathlib import Path
-from typing import List, Dict, Tuple
+from typing import Any
+
+from generate_tool import SDK_PYTHON, SUPPORTED_SDKS, emit
+
+
+def read_text(path: Path) -> str:
+    """Read text from mixed-encoding generated files."""
+    for encoding in ("utf-8", "cp1252", "latin-1"):
+        try:
+            return path.read_text(encoding=encoding)
+        except UnicodeDecodeError:
+            continue
+    raise ValueError(f"Unable to decode file: {path}")
 
 
 class ToolLinter:
-    """Lint LangChain tools for quality."""
+    """Lint LangChain tool drafts by SDK."""
 
-    def __init__(self, tools_dir: str = "generated_tools"):
-        """Initialize linter."""
+    def __init__(self, tools_dir: str = "generated_tools", sdk: str = SDK_PYTHON):
         self.tools_dir = Path(tools_dir)
+        self.sdk = sdk
 
-    def lint_tool_file(self, filepath: Path) -> List[str]:
-        """
-        Lint a single tool file.
+    def tool_files(self) -> list[Path]:
+        """List candidate tool files."""
+        extension = {SDK_PYTHON: ".py", "typescript": ".ts", "javascript": ".js"}[self.sdk]
+        return sorted(path for path in self.tools_dir.rglob(f"*{extension}") if path.is_file())
 
-        Args:
-            filepath: Path to tool Python file.
+    def lint_tool_file(self, filepath: Path) -> list[str]:
+        """Return issues for one tool file."""
+        content = read_text(filepath)
+        issues: list[str] = []
 
-        Returns:
-            List of linting issues found.
-        """
-        issues = []
-
-        if not filepath.exists():
-            return [f"File not found: {filepath}"]
-
-        with open(filepath, "r") as f:
-            content = f.read()
-
-        # Check for docstring
-        if '"""' not in content:
-            issues.append("Missing module docstring")
-
-        # Check for @tool decorator
-        if "@tool" not in content:
-            issues.append("Missing @tool decorator")
-
-        # Check for function docstring
-        if not re.search(r'def \w+\([^)]*\):\s+"""', content):
-            issues.append("Tool function missing docstring")
-
-        # Check for type hints
-        if not re.search(r"def \w+\([^)]*:\s*\w+", content):
-            issues.append("Function parameters missing type hints")
-
-        # Check for return type hint
-        if not re.search(r"\)\s*->\s*\w+:", content):
-            issues.append("Function return type missing")
-
-        # Check for Args section in docstring
-        if 'Args:' not in content and '(' in content:
-            issues.append("Docstring missing Args section")
-
-        # Check for Returns section in docstring
-        if 'Returns:' not in content:
-            issues.append("Docstring missing Returns section")
-
-        # Check for implementation (not just placeholder)
-        if 'TODO' in content and content.count('TODO') > 2:
-            issues.append("Too many TODO placeholders")
+        if self.sdk == SDK_PYTHON:
+            if '"""' not in content:
+                issues.append("missing module docstring")
+            if "@tool" not in content:
+                issues.append("missing @tool decorator")
+            if "BaseModel" not in content:
+                issues.append("missing Pydantic args schema")
+            if "success" not in content or "metadata" not in content:
+                issues.append("missing stable response envelope")
+            if "TODO" not in content:
+                issues.append("missing implementation placeholder note")
+        else:
+            if 'import { tool } from "langchain";' not in content:
+                issues.append("missing langchain tool import")
+            if 'import * as z from "zod";' not in content:
+                issues.append("missing zod schema import")
+            if "schema: z.object" not in content and "const schema = z.object" not in content:
+                issues.append("missing zod object schema")
+            if "success:" not in content or "metadata:" not in content:
+                issues.append("missing stable response envelope")
+            if "TODO" not in content:
+                issues.append("missing implementation placeholder note")
 
         return issues
 
-    def lint_all_tools(self) -> Dict[str, List[str]]:
-        """
-        Lint all tool files in directory.
+    def lint_all_tools(self) -> dict[str, list[str]]:
+        """Lint every tool file under the configured directory."""
+        files = self.tool_files()
+        results: dict[str, list[str]] = {}
 
-        Returns:
-            Dictionary mapping filenames to issues found.
-        """
-        print(f"Linting tools in {self.tools_dir}...")
-
-        results = {}
-        tool_files = list(self.tools_dir.glob("**/*.py"))
-
-        if not tool_files:
-            print("No tool files found")
-            return results
-
-        for tool_file in tool_files:
-            if tool_file.name != "__init__.py":
-                issues = self.lint_tool_file(tool_file)
-                if issues:
-                    results[str(tool_file)] = issues
+        for file_path in files:
+            issues = self.lint_tool_file(file_path)
+            if issues:
+                results[str(file_path)] = issues
 
         return results
 
-    def check_docstring_quality(self, filepath: Path) -> Dict:
-        """
-        Check docstring quality and completeness.
-
-        Args:
-            filepath: Path to tool file.
-
-        Returns:
-            Dictionary with quality metrics.
-        """
-        with open(filepath, "r") as f:
-            content = f.read()
-
-        metrics = {
-            "has_module_docstring": '"""' in content,
-            "has_function_docstring": "@tool" in content,
-            "has_args_section": "Args:" in content,
-            "has_returns_section": "Returns:" in content,
-            "has_raises_section": "Raises:" in content,
-            "has_examples": "Example:" in content,
-            "docstring_length": len(
-                re.search(r'"""(.*?)"""', content, re.DOTALL).group(1)
-                if re.search(r'"""(.*?)"""', content, re.DOTALL)
-                else ""
-            ),
+    def generate_report(self, lint_results: dict[str, list[str]]) -> dict[str, Any]:
+        """Return structured lint report data."""
+        return {
+            "success": not lint_results,
+            "sdk": self.sdk,
+            "tools_dir": str(self.tools_dir),
+            "files_with_issues": len(lint_results),
+            "issues": lint_results,
         }
 
-        return metrics
 
-    def generate_report(self, lint_results: Dict[str, List[str]]) -> str:
-        """
-        Generate a linting report.
+def build_parser() -> argparse.ArgumentParser:
+    """Build CLI args."""
+    parser = argparse.ArgumentParser(
+        description="Lint generated LangChain tool files for one SDK target.",
+        epilog=(
+            "Examples:\n"
+            "  python scripts/lint_tools.py --tools-dir generated_tools --sdk python\n"
+            "  python scripts/lint_tools.py --tools-dir generated_tools_ts --sdk typescript"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        "--tools-dir",
+        default="generated_tools",
+        help="Directory containing generated tools",
+    )
+    parser.add_argument(
+        "--sdk",
+        choices=SUPPORTED_SDKS,
+        default=SDK_PYTHON,
+        help="Target LangChain SDK",
+    )
+    parser.add_argument(
+        "--format",
+        choices=("json", "text"),
+        default="json",
+        help="Output format for script results",
+    )
+    return parser
 
-        Args:
-            lint_results: Results from lint_all_tools().
 
-        Returns:
-            Formatted report string.
-        """
-        report = "\nLinting Report\n" + "=" * 50 + "\n"
+def emit_result(payload: dict[str, Any], output_format: str) -> None:
+    """Write results to stdout."""
+    if output_format == "json":
+        print(json.dumps(payload, indent=2))
+        return
 
-        if not lint_results:
-            report += "All tools passed linting!\n"
-            return report
+    if payload["success"]:
+        print("lint passed")
+        return
 
-        total_files = len(lint_results)
-        total_issues = sum(len(issues) for issues in lint_results.values())
+    print(f"lint found issues in {payload['files_with_issues']} file(s)")
 
-        report += f"Files with issues: {total_files}\n"
-        report += f"Total issues found: {total_issues}\n\n"
 
-        for filepath, issues in lint_results.items():
-            report += f"\n{filepath}:\n"
-            for issue in issues:
-                report += f"  - {issue}\n"
+def main() -> int:
+    parser = build_parser()
+    args = parser.parse_args()
 
-        report += "\n" + "=" * 50 + "\n"
-        return report
-
-    def print_report(self, lint_results: Dict[str, List[str]]):
-        """Print linting report to console."""
-        report = self.generate_report(lint_results)
-        print(report)
+    try:
+        linter = ToolLinter(tools_dir=args.tools_dir, sdk=args.sdk)
+        results = linter.lint_all_tools()
+        report = linter.generate_report(results)
+        emit_result(report, args.format)
+        return 0 if report["success"] else 1
+    except ValueError as exc:
+        emit(f"Error: {exc}")
+        return 2
+    except Exception as exc:  # pragma: no cover - defensive CLI guard
+        emit(f"Unexpected error: {exc}")
+        return 1
 
 
 if __name__ == "__main__":
-    linter = ToolLinter()
-    results = linter.lint_all_tools()
-    linter.print_report(results)
-
-    # Exit with error code if issues found
-    exit(1 if results else 0)
+    raise SystemExit(main())

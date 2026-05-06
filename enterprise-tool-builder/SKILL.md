@@ -1,149 +1,227 @@
 ---
 name: enterprise-tool-builder
-description: Use when building or updating custom LangChain tools for enterprise SaaS APIs such as Jira, Confluence, Slack, HubSpot, Salesforce, Zendesk, ServiceNow, Notion, GitHub, or Google Workspace. Follow this skill for schema-driven endpoint selection, auth-aware wrappers, deterministic outputs, and validation with the bundled endpoint JSON files, templates, and scripts. Do not use for MCP server packaging or generic web scraping.
+description: Build or update enterprise API toolsets for LangChain and MCP-backed agent workflows. Use when Codex needs to turn a real SaaS API contract into safe, structured tools with clear schemas, auth guidance, stable outputs, and validation loops for services such as Jira, Confluence, Slack, GitHub, HubSpot, Salesforce, Zendesk, ServiceNow, Notion, or Google Workspace.
 metadata:
   category: integration
-  keywords: "enterprise SaaS, LangChain tools, API wrappers, Jira, Confluence, HubSpot, Salesforce, Zendesk, Slack"
+  keywords: "enterprise API tools, LangChain, MCP, Jira, Confluence, Slack, GitHub, HubSpot, Salesforce, Zendesk, ServiceNow, Notion, Google Workspace"
 ---
 
 # Enterprise Tool Builder
 
-Build a coherent set of LangChain tools around a real enterprise API workflow. Keep `SKILL.md` procedural and lean. Load heavier references only when the bundled endpoint files do not already answer the question.
+Build a small, coherent toolset around a real enterprise workflow. Prefer tight contracts, tenant-safe auth, and deterministic outputs over broad API passthroughs.
+
+## Progress
+
+- [ ] Reduce the request to the minimum useful operations
+- [ ] Choose the source-of-truth endpoint file or create one
+- [ ] Summarize the candidate endpoints before writing code
+- [ ] Define input schema, output envelope, and auth strategy
+- [ ] Scaffold or update the tool package
+- [ ] Validate schemas, generated code, and response shaping
+- [ ] Smoke-test realistic success and failure paths
 
 ## Default workflow
 
-Progress:
-- [ ] Define the user-visible tool contract
-- [ ] Choose or author the endpoint schema
-- [ ] Generate or scaffold code
-- [ ] Replace placeholders with real auth and response shaping
-- [ ] Validate schemas and generated code
-- [ ] Test with realistic inputs and failure cases
+### 1. Reduce the request to concrete operations
 
-### 1. Define the tool contract first
+Write down:
 
-Write down the minimum set of operations before touching code:
+- target service and tenant/workspace scope
+- read vs write actions
+- exact API objects involved
+- minimum inputs required for each tool
+- expected confirmation or result shape
+- preferred implementation SDK: `python`, `typescript`, or `javascript`
 
-- tool names, using `service_action_object` style such as `jira_get_issue`
-- required inputs, optional filters, pagination controls, and auth requirements
-- exact output fields the agent should see
-- whether the tool is read-only, write-capable, or destructive
+Prefer multiple focused tools over one large tool that mixes search, create, update, and admin operations.
 
-Prefer a small set of focused tools over one broad tool that hides many behaviors.
+Default SDK choice:
 
-### 2. Choose the source of truth for endpoints
+- prefer `python` when the user does not specify an SDK
+- use `typescript` or `javascript` when the surrounding agent/app stack is Node-first
+- for Python LangChain tools, use `@tool` plus Pydantic input schemas
+- for TypeScript or JavaScript LangChain tools, use `tool(...)` from `langchain` plus `zod` schemas
 
-Start with `assets/endpoints/*.json`.
+### 2. Choose the source of truth
 
-- If the service already has a bundled endpoint file, trim or extend that JSON to the endpoints you need.
-- If the service is bundled but the specific endpoint is missing, read `references/REFERENCES.md` for the official docs, then add the missing endpoint definition to the matching JSON file.
-- If the service is not bundled at all, read `references/REFERENCES.md`, create a new `assets/endpoints/<service>_endpoints.json`, and keep the schema format consistent with the existing files.
+Use this order:
 
-Only browse external docs after checking the bundled JSON and references.
+1. `assets/endpoints/*.json`
+2. `references/REFERENCES.md` for missing base URL, auth, or official docs links
+3. LangChain docs MCP for LangChain or MCP implementation details
 
-### 3. Validate the schema before generating code
-
-Run:
+Start by inspecting the closest bundled endpoint file:
 
 ```bash
-python scripts/validate_schema.py
+python scripts/summarize_endpoints.py assets/endpoints/<service>_endpoints.json --format json
 ```
 
-Do this every time you edit `assets/endpoints/*.json`. Fix schema problems before generating tools.
+If the needed service or action is missing:
 
-### 4. Generate or scaffold code
+- extend the existing endpoint file instead of creating a parallel source
+- only create a new endpoint file when the service is not already bundled
+- keep endpoint files task-focused rather than dumping a full vendor spec
 
-Use the bundled scripts as starting points, not as final production output.
+Use `references/REFERENCES.md` only when the endpoint JSON does not already answer the question.
 
-Available scripts:
+### 3. Design the tool contract before implementation
 
-- `scripts/validate_schema.py` - validates endpoint JSON files
-- `scripts/generate_tool.py` - generates a single draft tool from an endpoint definition
-- `scripts/generate_toolset.py` - batch-generates draft tools for all endpoints in a service file
-- `scripts/scaffold_tool_file.py` - creates a service package layout under `generated_tools/`
-- `scripts/lint_tools.py` - checks generated tool files for basic quality issues
-- `scripts/test_tool.py` - runs basic functional, error, and rate-limit style tests
-- `scripts/fetch_endpoints.py` - saves small starter endpoint files; use only as seed data
+For each tool, lock down:
 
-Use the templates in `assets/templates/` when the generators are too shallow for the request:
+- tool name and single responsibility
+- required inputs, optional inputs, and constraints
+- auth requirements and tenant/workspace identifiers
+- stable output envelope
+- whether the tool should be sync, async, or paginated
 
-- `langchain_tool_template.py` for a plain `@tool`
-- `langchain_structured_tool.py` when you need Pydantic-backed input validation
-- `paginated_tool_template.py` when the API pages results
-- `async_tool_template.py` when async calls matter
-- `auth_header_template.py` for auth header patterns
+Default output envelope:
 
-### 5. Replace generator placeholders immediately
+```json
+{
+  "success": true,
+  "data": {},
+  "error": null,
+  "metadata": {}
+}
+```
 
-The bundled generators are intentionally incomplete. After generation:
+Keep `data` small and human-readable. Return confirmation-shaped objects for write tools.
 
-- replace placeholder parameters such as `query: str = 'default'`
-- replace TODO comments with real request construction
-- wire in auth from `scripts/auth/`
-- shape the response into a small, deterministic object
-- add pagination inputs only when the endpoint supports them
+### 4. Pick the right implementation pattern
 
-Do not ship raw generated files without this pass.
+Use the bundled templates as defaults:
 
-### 6. Implement with enterprise-safe defaults
+- `assets/templates/langchain_structured_tool.py` for most tools with strict schemas
+- `assets/templates/langchain_tool_template.py` only for very simple cases
+- `assets/templates/paginated_tool_template.py` for list endpoints
+- `assets/templates/async_tool_template.py` for long-running or concurrent I/O
+- `assets/templates/auth_header_template.py` for header construction patterns
 
-Defaults:
+Use Pydantic models for Python input validation. Keep descriptions and field constraints explicit.
 
-- use strong input schemas with descriptions and constraints
-- return a stable envelope with `success`, `data`, and optional `error` or `metadata`
-- keep outputs small and human-readable
-- split read and write tools when permissions differ
-- validate auth, workspace, and object identifiers outside the LLM
+### 5. Plan auth and tenant safety
 
-Avoid:
+Use the endpoint JSON plus vendor docs to decide whether the tool needs:
 
-- raw API passthroughs
-- giant response blobs
-- shared auth tokens between users or tenants
-- unrestricted query languages such as SOQL or JQL without validation
-- one tool that mixes search, create, update, and admin actions
+- bearer token
+- basic auth
+- OAuth 2.0
+- service account or delegated credentials
+
+Create `auth_flow.md` in the generated tool package when the user needs credential setup instructions.
+
+Use the helpers in `scripts/auth/` when they fit, but validate that the flow matches the target service. Do not guess OAuth details.
+
+### 6. Scaffold and implement
+
+Scaffold package structure when starting a new service bundle:
+
+```bash
+python scripts/scaffold_tool_file.py <service> --sdk python
+```
+
+Use generators only as accelerators:
+
+- `scripts/generate_tool.py` creates a first draft from one endpoint
+- `scripts/generate_toolset.py` batch-generates drafts from one endpoint file
+
+Examples:
+
+```bash
+python scripts/generate_tool.py assets/endpoints/github_api_endpoints.json --endpoint-id github_agent_tasks_create_task_in_repo --sdk python
+python scripts/generate_tool.py assets/endpoints/github_api_endpoints.json --endpoint-id github_agent_tasks_create_task_in_repo --sdk typescript --dry-run
+python scripts/generate_toolset.py --service github --sdk javascript --limit 5
+```
+
+Treat generated code as a draft. Replace placeholders with:
+
+- real request construction
+- auth wiring
+- explicit validation
+- deterministic output shaping
+- service-specific error handling
 
 ### 7. Validate in a loop
 
-Run this loop until the generated tool is clean:
+Run validation after edits:
 
 ```bash
-python scripts/validate_schema.py
-python scripts/lint_tools.py
-python scripts/test_tool.py
+python scripts/validate_schema.py --format json
+python scripts/lint_tools.py --tools-dir generated_tools --sdk python
+python scripts/validate_toolset.py --tools-dir generated_tools --sdk python
 ```
 
-If a command fails:
+If you generated or updated a specific tool, also run a focused smoke test:
+
+```bash
+python scripts/test_tool.py generated_tools/<tool_file>.py --tool-name <tool_symbol> --expect-key success --expect-key data
+```
+
+If validation fails:
 
 1. Fix the schema or implementation.
-2. Re-run the same command.
-3. Only proceed once it passes.
+2. Re-run the same validator.
+3. Only proceed when it passes.
 
-### 8. Use the reference file selectively
+### 8. Use LangChain docs only for framework specifics
 
-Read `references/REFERENCES.md` only when:
+Use the LangChain docs MCP server or these docs pages for implementation guidance, not for the enterprise API contract itself:
 
-- the endpoint JSON does not already cover the service
-- you need the correct auth flow or base URL
-- you need an official docs link for a new endpoint
-- you need to confirm whether the API uses cursor, offset, or token pagination
+- `https://docs.langchain.com/oss/python/langchain/mcp`
+- `https://docs.langchain.com/oss/python/deepagents/cli/mcp-tools`
+- `https://docs.langchain.com/oss/python/langchain/agents`
+- `https://docs.langchain.com/oss/javascript/langchain/agents`
 
-Do not load the full reference file by default for simple edits to an existing endpoint JSON file.
+Use LangChain docs to confirm:
+
+- MCP transport config
+- header-based auth wiring
+- when to use HTTP vs stdio transports
+- tool exposure and filtering patterns
+- Python tool patterns: `@tool` plus Pydantic schemas
+- TypeScript and JavaScript tool patterns: `tool(...)` plus `zod` schemas
+
+Do not replace vendor API docs with LangChain docs when you need endpoint semantics.
+
+## Use bundled resources selectively
+
+### Scripts
+
+- `scripts/summarize_endpoints.py`: inspect an endpoint file before choosing operations, with `--offset` and JSON output for large bundles
+- `scripts/fetch_endpoints.py`: convert a local or remote OpenAPI JSON source into the bundled endpoint-file shape
+- `scripts/validate_schema.py`: validate endpoint JSON shape and optionally normalize leading slashes with `--fix-paths`
+- `scripts/scaffold_tool_file.py`: create a package skeleton for `python`, `typescript`, or `javascript`
+- `scripts/generate_tool.py`: generate one draft tool from one endpoint, targeting the preferred LangChain SDK
+- `scripts/generate_toolset.py`: generate draft tools in bulk for one service or the whole bundle
+- `scripts/lint_tools.py`: catch obvious structural issues in generated Python or JS/TS tools
+- `scripts/validate_toolset.py`: run lint and SDK-specific validation against a generated tool directory
+- `scripts/test_tool.py`: smoke-test a generated Python tool with explicit params and expected keys
+
+### References
+
+- `references/REFERENCES.md`: vendor docs index, base URLs, and auth starting points
+
+### Assets
+
+- `assets/endpoints/`: source-of-truth endpoint definitions
+- `assets/templates/`: implementation templates for common tool patterns
 
 ## Gotchas
 
-- The bundled endpoint directory is `assets/endpoints`, not `assets/api_schemas`.
-- `scripts/generate_tool.py` and `scripts/generate_toolset.py` create drafts, not production-ready tools.
-- Some services in `references/REFERENCES.md` do not yet have a bundled endpoint JSON file. Add one before relying on batch generation.
-- `scripts/test_tool.py` is a lightweight harness. It does not replace service-specific contract tests.
-- If a tool writes data, define a narrow input schema and a small confirmation-shaped output instead of returning the full API payload.
+- Some bundled endpoint files are intentionally sparse or empty. Validate coverage before you start generating tools.
+- `scripts/generate_tool.py` and `scripts/generate_toolset.py` produce drafts, not production-ready tools.
+- The structured template file is `assets/templates/langchain_structured_tool.py`; do not guess a different filename.
+- Keep read and write tools separate when permissions or failure modes differ.
+- Do not expose unrestricted query languages such as raw JQL or SOQL without validation and narrowing.
+- Validate tenant identifiers, workspace identifiers, and object IDs outside the LLM-facing tool call.
+- Prefer confirmation-shaped outputs for write operations instead of returning the vendor's full payload.
 
 ## Deliverable checklist
 
 Before finishing, make sure the skill user gets:
 
-- updated endpoint JSON in `assets/endpoints/` when the API contract changed
-- generated or scaffolded code under `generated_tools/` when code generation was requested
-- auth wiring that matches the target service
-- deterministic output shaping
+- updated or newly created endpoint JSON in `assets/endpoints/` when the API contract changed
+- a generated or updated tool package with real auth and response shaping
+- `auth_flow.md` when credential setup is non-trivial
 - validation results from the bundled scripts
+- a narrow set of tools that maps cleanly to the user workflow

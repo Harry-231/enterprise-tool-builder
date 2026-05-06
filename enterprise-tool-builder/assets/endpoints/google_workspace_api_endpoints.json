@@ -7336,7 +7336,7 @@
   "all_endpoints": [
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/profile",
+      "path": "/gmail/v1/users/{userId}/profile",
       "operation_id": "gmail.users.getProfile",
       "summary": "Gets the current user's Gmail profile.",
       "description": "Gets the current user's Gmail profile.",
@@ -7363,7 +7363,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/stop",
+      "path": "/gmail/v1/users/{userId}/stop",
       "operation_id": "gmail.users.stop",
       "summary": "Turn off push notification delivery for the given user mailbox. For more information, see [Configure push notifications in Gmail API](https://developers.google.com/workspace/gmail/api/guides/push).",
       "description": "Turn off push notification delivery for the given user mailbox. For more information, see [Configure push notifications in Gmail API](https://developers.google.com/workspace/gmail/api/guides/push).",
@@ -7389,7 +7389,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/watch",
+      "path": "/gmail/v1/users/{userId}/watch",
       "operation_id": "gmail.users.watch",
       "summary": "Set up or update a push notification watch on the given user mailbox. For more information, see [Configure push notifications in Gmail API](https://developers.google.com/workspace/gmail/api/guides/push).",
       "description": "Set up or update a push notification watch on the given user mailbox. For more information, see [Configure push notifications in Gmail API](https://developers.google.com/workspace/gmail/api/guides/push).",
@@ -7415,7 +7415,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/history",
+      "path": "/gmail/v1/users/{userId}/history",
       "operation_id": "gmail.users.history.list",
       "summary": "Lists the history of all changes to the given mailbox. History results are returned in chronological order (increasing `historyId`). For more information, see [Synchronize clients with Gmail](https://developers.google.com/workspace/gmail/api/guides/sync).",
       "description": "Lists the history of all changes to the given mailbox. History results are returned in chronological order (increasing `historyId`). For more information, see [Synchronize clients with Gmail](https://developers.google.com/workspace/gmail/api/guides/sync).",
@@ -7471,7 +7471,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/messages/import",
+      "path": "/gmail/v1/users/{userId}/messages/import",
       "operation_id": "gmail.users.messages.import",
       "summary": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note that the maximum size of the message is 150 MB.",
       "description": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note that the maximum size of the message is 150 MB.",
@@ -7520,7 +7520,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/messages/{id}",
+      "path": "/gmail/v1/users/{userId}/messages/{id}",
       "operation_id": "gmail.users.messages.get",
       "summary": "Gets the specified message.",
       "description": "Gets the specified message.",
@@ -7567,7 +7567,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/messages/send",
+      "path": "/gmail/v1/users/{userId}/messages/send",
       "operation_id": "gmail.users.messages.send",
       "summary": "Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. For more information, see [Create and send email messages](https://developers.google.com/workspace/gmail/api/guides/sending).",
       "description": "Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. For more information, see [Create and send email messages](https://developers.google.com/workspace/gmail/api/guides/sending).",
@@ -7594,7 +7594,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/messages",
+      "path": "/gmail/v1/users/{userId}/messages",
       "operation_id": "gmail.users.messages.insert",
       "summary": "Directly inserts a message into only this user's mailbox similar to `IMAP APPEND`, bypassing most scanning and classification. Does not send a message. For more information, see [Create and send email messages](https://developers.google.com/workspace/gmail/api/guides/sending).",
       "description": "Directly inserts a message into only this user's mailbox similar to `IMAP APPEND`, bypassing most scanning and classification. Does not send a message. For more information, see [Create and send email messages](https://developers.google.com/workspace/gmail/api/guides/sending).",
@@ -7631,7 +7631,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/messages",
+      "path": "/gmail/v1/users/{userId}/messages",
       "operation_id": "gmail.users.messages.list",
       "summary": "Lists the messages in the user's mailbox. For more information, see [List Gmail messages](https://developers.google.com/workspace/gmail/api/guides/list-messages).",
       "description": "Lists the messages in the user's mailbox. For more information, see [List Gmail messages](https://developers.google.com/workspace/gmail/api/guides/list-messages).",
@@ -7687,7 +7687,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/messages/batchModify",
+      "path": "/gmail/v1/users/{userId}/messages/batchModify",
       "operation_id": "gmail.users.messages.batchModify",
       "summary": "Modifies the labels on the specified messages.",
       "description": "Modifies the labels on the specified messages.",
@@ -7711,7 +7711,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/messages/{id}/untrash",
+      "path": "/gmail/v1/users/{userId}/messages/{id}/untrash",
       "operation_id": "gmail.users.messages.untrash",
       "summary": "Removes the specified message from the trash.",
       "description": "Removes the specified message from the trash.",
@@ -7741,7 +7741,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/messages/{id}",
+      "path": "/gmail/v1/users/{userId}/messages/{id}",
       "operation_id": "gmail.users.messages.delete",
       "summary": "Immediately and permanently deletes the specified message. This operation cannot be undone. Prefer `messages.trash` instead.",
       "description": "Immediately and permanently deletes the specified message. This operation cannot be undone. Prefer `messages.trash` instead.",
@@ -7770,7 +7770,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/messages/batchDelete",
+      "path": "/gmail/v1/users/{userId}/messages/batchDelete",
       "operation_id": "gmail.users.messages.batchDelete",
       "summary": "Deletes many messages by message ID. Provides no guarantees that messages were not already deleted or even existed at all.",
       "description": "Deletes many messages by message ID. Provides no guarantees that messages were not already deleted or even existed at all.",
@@ -7793,7 +7793,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/messages/{id}/modify",
+      "path": "/gmail/v1/users/{userId}/messages/{id}/modify",
       "operation_id": "gmail.users.messages.modify",
       "summary": "Modifies the labels on the specified message.",
       "description": "Modifies the labels on the specified message.",
@@ -7823,7 +7823,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/messages/{id}/trash",
+      "path": "/gmail/v1/users/{userId}/messages/{id}/trash",
       "operation_id": "gmail.users.messages.trash",
       "summary": "Moves the specified message to the trash.",
       "description": "Moves the specified message to the trash.",
@@ -7853,7 +7853,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}",
+      "path": "/gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}",
       "operation_id": "gmail.users.messages.attachments.get",
       "summary": "Gets the specified message attachment.",
       "description": "Gets the specified message attachment.",
@@ -7892,7 +7892,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/labels",
+      "path": "/gmail/v1/users/{userId}/labels",
       "operation_id": "gmail.users.labels.list",
       "summary": "Lists all labels in the user's mailbox. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
       "description": "Lists all labels in the user's mailbox. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
@@ -7919,7 +7919,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/labels",
+      "path": "/gmail/v1/users/{userId}/labels",
       "operation_id": "gmail.users.labels.create",
       "summary": "Creates a label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
       "description": "Creates a label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
@@ -7944,7 +7944,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/labels/{id}",
+      "path": "/gmail/v1/users/{userId}/labels/{id}",
       "operation_id": "gmail.users.labels.get",
       "summary": "Gets the specified label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
       "description": "Gets the specified label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
@@ -7977,7 +7977,7 @@
     },
     {
       "method": "PATCH",
-      "path": "gmail/v1/users/{userId}/labels/{id}",
+      "path": "/gmail/v1/users/{userId}/labels/{id}",
       "operation_id": "gmail.users.labels.patch",
       "summary": "Patch the specified label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
       "description": "Patch the specified label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
@@ -8008,7 +8008,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/labels/{id}",
+      "path": "/gmail/v1/users/{userId}/labels/{id}",
       "operation_id": "gmail.users.labels.delete",
       "summary": "Immediately and permanently deletes the specified label and removes it from any messages and threads that it's applied to. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
       "description": "Immediately and permanently deletes the specified label and removes it from any messages and threads that it's applied to. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
@@ -8039,7 +8039,7 @@
     },
     {
       "method": "PUT",
-      "path": "gmail/v1/users/{userId}/labels/{id}",
+      "path": "/gmail/v1/users/{userId}/labels/{id}",
       "operation_id": "gmail.users.labels.update",
       "summary": "Updates the specified label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
       "description": "Updates the specified label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).",
@@ -8070,7 +8070,7 @@
     },
     {
       "method": "PUT",
-      "path": "gmail/v1/users/{userId}/settings/imap",
+      "path": "/gmail/v1/users/{userId}/settings/imap",
       "operation_id": "gmail.users.settings.updateImap",
       "summary": "Updates IMAP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).",
       "description": "Updates IMAP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).",
@@ -8093,7 +8093,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/pop",
+      "path": "/gmail/v1/users/{userId}/settings/pop",
       "operation_id": "gmail.users.settings.getPop",
       "summary": "Gets POP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).",
       "description": "Gets POP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).",
@@ -8119,7 +8119,7 @@
     },
     {
       "method": "PUT",
-      "path": "gmail/v1/users/{userId}/settings/language",
+      "path": "/gmail/v1/users/{userId}/settings/language",
       "operation_id": "gmail.users.settings.updateLanguage",
       "summary": "Updates language settings. For more information, see [Manage language settings](https://developers.google.com/workspace/gmail/api/guides/language-settings). If successful, the return object contains the `displayLanguage` that was saved for the user, which may differ from the value passed into the request. This is because the requested `displayLanguage` may not be directly supported by Gmail but have a close variant that is, and so the variant may be chosen and saved instead.",
       "description": "Updates language settings. For more information, see [Manage language settings](https://developers.google.com/workspace/gmail/api/guides/language-settings). If successful, the return object contains the `displayLanguage` that was saved for the user, which may differ from the value passed into the request. This is because the requested `displayLanguage` may not be directly supported by Gmail but have a close variant that is, and so the variant may be chosen and saved instead.",
@@ -8142,7 +8142,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/vacation",
+      "path": "/gmail/v1/users/{userId}/settings/vacation",
       "operation_id": "gmail.users.settings.getVacation",
       "summary": "Gets vacation responder settings. For more information, see [Manage vacation settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/vacation_settings).",
       "description": "Gets vacation responder settings. For more information, see [Manage vacation settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/vacation_settings).",
@@ -8168,7 +8168,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/language",
+      "path": "/gmail/v1/users/{userId}/settings/language",
       "operation_id": "gmail.users.settings.getLanguage",
       "summary": "Gets language settings. For more information, see [Manage language settings](https://developers.google.com/workspace/gmail/api/guides/language-settings).",
       "description": "Gets language settings. For more information, see [Manage language settings](https://developers.google.com/workspace/gmail/api/guides/language-settings).",
@@ -8194,7 +8194,7 @@
     },
     {
       "method": "PUT",
-      "path": "gmail/v1/users/{userId}/settings/pop",
+      "path": "/gmail/v1/users/{userId}/settings/pop",
       "operation_id": "gmail.users.settings.updatePop",
       "summary": "Updates POP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).",
       "description": "Updates POP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).",
@@ -8217,7 +8217,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/autoForwarding",
+      "path": "/gmail/v1/users/{userId}/settings/autoForwarding",
       "operation_id": "gmail.users.settings.getAutoForwarding",
       "summary": "Gets the auto-forwarding setting for the specified account. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings).",
       "description": "Gets the auto-forwarding setting for the specified account. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings).",
@@ -8243,7 +8243,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/imap",
+      "path": "/gmail/v1/users/{userId}/settings/imap",
       "operation_id": "gmail.users.settings.getImap",
       "summary": "Gets IMAP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).",
       "description": "Gets IMAP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).",
@@ -8269,7 +8269,7 @@
     },
     {
       "method": "PUT",
-      "path": "gmail/v1/users/{userId}/settings/vacation",
+      "path": "/gmail/v1/users/{userId}/settings/vacation",
       "operation_id": "gmail.users.settings.updateVacation",
       "summary": "Updates vacation responder settings. For more information, see [Manage vacation settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/vacation_settings).",
       "description": "Updates vacation responder settings. For more information, see [Manage vacation settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/vacation_settings).",
@@ -8292,7 +8292,7 @@
     },
     {
       "method": "PUT",
-      "path": "gmail/v1/users/{userId}/settings/autoForwarding",
+      "path": "/gmail/v1/users/{userId}/settings/autoForwarding",
       "operation_id": "gmail.users.settings.updateAutoForwarding",
       "summary": "Updates the auto-forwarding setting for the specified account. A verified forwarding address must be specified when auto-forwarding is enabled. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Updates the auto-forwarding setting for the specified account. A verified forwarding address must be specified when auto-forwarding is enabled. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -8315,7 +8315,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/settings/filters/{id}",
+      "path": "/gmail/v1/users/{userId}/settings/filters/{id}",
       "operation_id": "gmail.users.settings.filters.delete",
       "summary": "Immediately and permanently deletes the specified filter. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).",
       "description": "Immediately and permanently deletes the specified filter. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).",
@@ -8344,7 +8344,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/filters",
+      "path": "/gmail/v1/users/{userId}/settings/filters",
       "operation_id": "gmail.users.settings.filters.list",
       "summary": "Lists the message filters of a Gmail user. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).",
       "description": "Lists the message filters of a Gmail user. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).",
@@ -8370,7 +8370,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/filters/{id}",
+      "path": "/gmail/v1/users/{userId}/settings/filters/{id}",
       "operation_id": "gmail.users.settings.filters.get",
       "summary": "Gets a filter. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).",
       "description": "Gets a filter. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).",
@@ -8402,7 +8402,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/filters",
+      "path": "/gmail/v1/users/{userId}/settings/filters",
       "operation_id": "gmail.users.settings.filters.create",
       "summary": "Creates a filter. Note: you can only create a maximum of 1,000 filters. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).",
       "description": "Creates a filter. Note: you can only create a maximum of 1,000 filters. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).",
@@ -8425,7 +8425,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
       "operation_id": "gmail.users.settings.sendAs.get",
       "summary": "Gets the specified send-as alias. Fails with an HTTP 404 error if the specified address is not a member of the collection. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings).",
       "description": "Gets the specified send-as alias. Fails with an HTTP 404 error if the specified address is not a member of the collection. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings).",
@@ -8457,7 +8457,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/sendAs",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs",
       "operation_id": "gmail.users.settings.sendAs.create",
       "summary": "Creates a custom \"from\" send-as alias. If an SMTP MSA is specified, Gmail will attempt to connect to the SMTP service to validate the configuration before creating the alias. If ownership verification is required for the alias, a message will be sent to the email address and the resource's verification status will be set to `pending`; otherwise, the resource will be created with verification status set to `accepted`. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Creates a custom \"from\" send-as alias. If an SMTP MSA is specified, Gmail will attempt to connect to the SMTP service to validate the configuration before creating the alias. If ownership verification is required for the alias, a message will be sent to the email address and the resource's verification status will be set to `pending`; otherwise, the resource will be created with verification status set to `accepted`. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -8480,7 +8480,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/sendAs",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs",
       "operation_id": "gmail.users.settings.sendAs.list",
       "summary": "Lists the send-as aliases for the specified account. The result includes the primary send-as address associated with the account as well as any custom \"from\" aliases. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings).",
       "description": "Lists the send-as aliases for the specified account. The result includes the primary send-as address associated with the account as well as any custom \"from\" aliases. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings).",
@@ -8506,7 +8506,7 @@
     },
     {
       "method": "PUT",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
       "operation_id": "gmail.users.settings.sendAs.update",
       "summary": "Updates a send-as alias. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). Addresses other than the primary address for the account can only be updated by service account clients that have been delegated domain-wide authority.",
       "description": "Updates a send-as alias. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). Addresses other than the primary address for the account can only be updated by service account clients that have been delegated domain-wide authority.",
@@ -8536,7 +8536,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/verify",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/verify",
       "operation_id": "gmail.users.settings.sendAs.verify",
       "summary": "Sends a verification email to the specified send-as alias address. The verification status must be `pending`. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Sends a verification email to the specified send-as alias address. The verification status must be `pending`. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -8565,7 +8565,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
       "operation_id": "gmail.users.settings.sendAs.delete",
       "summary": "Deletes the specified send-as alias. Revokes any verification that may have been required for using it. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Deletes the specified send-as alias. Revokes any verification that may have been required for using it. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -8594,7 +8594,7 @@
     },
     {
       "method": "PATCH",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
       "operation_id": "gmail.users.settings.sendAs.patch",
       "summary": "Patch the specified send-as alias. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings).",
       "description": "Patch the specified send-as alias. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings).",
@@ -8624,7 +8624,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}",
       "operation_id": "gmail.users.settings.sendAs.smimeInfo.delete",
       "summary": "Deletes the specified S/MIME config for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
       "description": "Deletes the specified S/MIME config for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
@@ -8660,7 +8660,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}",
       "operation_id": "gmail.users.settings.sendAs.smimeInfo.get",
       "summary": "Gets the specified S/MIME config for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
       "description": "Gets the specified S/MIME config for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
@@ -8699,7 +8699,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}/setDefault",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}/setDefault",
       "operation_id": "gmail.users.settings.sendAs.smimeInfo.setDefault",
       "summary": "Sets the default S/MIME config for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
       "description": "Sets the default S/MIME config for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
@@ -8735,7 +8735,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo",
       "operation_id": "gmail.users.settings.sendAs.smimeInfo.list",
       "summary": "Lists S/MIME configs for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
       "description": "Lists S/MIME configs for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
@@ -8768,7 +8768,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo",
+      "path": "/gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo",
       "operation_id": "gmail.users.settings.sendAs.smimeInfo.insert",
       "summary": "Insert (upload) the given S/MIME config for the specified send-as alias. Note that `pkcs12` format is required for the key. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
       "description": "Insert (upload) the given S/MIME config for the specified send-as alias. Note that `pkcs12` format is required for the key. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).",
@@ -8798,7 +8798,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/cse/keypairs",
+      "path": "/gmail/v1/users/{userId}/settings/cse/keypairs",
       "operation_id": "gmail.users.settings.cse.keypairs.list",
       "summary": "Lists client-side encryption key pairs for an authenticated user. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Lists client-side encryption key pairs for an authenticated user. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -8837,7 +8837,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/cse/keypairs",
+      "path": "/gmail/v1/users/{userId}/settings/cse/keypairs",
       "operation_id": "gmail.users.settings.cse.keypairs.create",
       "summary": "Creates and uploads a client-side encryption S/MIME public key certificate chain and private key metadata for the authenticated user. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Creates and uploads a client-side encryption S/MIME public key certificate chain and private key metadata for the authenticated user. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -8861,7 +8861,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}",
+      "path": "/gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}",
       "operation_id": "gmail.users.settings.cse.keypairs.get",
       "summary": "Retrieves an existing client-side encryption key pair. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Retrieves an existing client-side encryption key pair. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -8894,7 +8894,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:enable",
+      "path": "/gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:enable",
       "operation_id": "gmail.users.settings.cse.keypairs.enable",
       "summary": "Turns on a client-side encryption key pair that was turned off. The key pair becomes active again for any associated client-side encryption identities. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Turns on a client-side encryption key pair that was turned off. The key pair becomes active again for any associated client-side encryption identities. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -8924,7 +8924,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:disable",
+      "path": "/gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:disable",
       "operation_id": "gmail.users.settings.cse.keypairs.disable",
       "summary": "Turns off a client-side encryption key pair. The authenticated user can no longer use the key pair to decrypt incoming CSE message texts or sign outgoing CSE mail. To regain access, use the EnableCseKeyPair to turn on the key pair. After 30 days, you can permanently delete the key pair by using the ObliterateCseKeyPair method. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Turns off a client-side encryption key pair. The authenticated user can no longer use the key pair to decrypt incoming CSE message texts or sign outgoing CSE mail. To regain access, use the EnableCseKeyPair to turn on the key pair. After 30 days, you can permanently delete the key pair by using the ObliterateCseKeyPair method. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -8954,7 +8954,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:obliterate",
+      "path": "/gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:obliterate",
       "operation_id": "gmail.users.settings.cse.keypairs.obliterate",
       "summary": "Deletes a client-side encryption key pair permanently and immediately. You can only permanently delete key pairs that have been turned off for more than 30 days. To turn off a key pair, use the DisableCseKeyPair method. Gmail can't restore or decrypt any messages that were encrypted by an obliterated key. Authenticated users and Google Workspace administrators lose access to reading the encrypted messages. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Deletes a client-side encryption key pair permanently and immediately. You can only permanently delete key pairs that have been turned off for more than 30 days. To turn off a key pair, use the DisableCseKeyPair method. Gmail can't restore or decrypt any messages that were encrypted by an obliterated key. Authenticated users and Google Workspace administrators lose access to reading the encrypted messages. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -8984,7 +8984,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/cse/identities",
+      "path": "/gmail/v1/users/{userId}/settings/cse/identities",
       "operation_id": "gmail.users.settings.cse.identities.list",
       "summary": "Lists the client-side encrypted identities for an authenticated user. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Lists the client-side encrypted identities for an authenticated user. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -9023,7 +9023,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/cse/identities",
+      "path": "/gmail/v1/users/{userId}/settings/cse/identities",
       "operation_id": "gmail.users.settings.cse.identities.create",
       "summary": "Creates and configures a client-side encryption identity that's authorized to send mail from the user account. Google publishes the S/MIME certificate to a shared domain-wide directory so that people within a Google Workspace organization can encrypt and send mail to the identity. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Creates and configures a client-side encryption identity that's authorized to send mail from the user account. Google publishes the S/MIME certificate to a shared domain-wide directory so that people within a Google Workspace organization can encrypt and send mail to the identity. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -9047,7 +9047,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}",
+      "path": "/gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}",
       "operation_id": "gmail.users.settings.cse.identities.get",
       "summary": "Retrieves a client-side encryption identity configuration. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Retrieves a client-side encryption identity configuration. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -9080,7 +9080,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}",
+      "path": "/gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}",
       "operation_id": "gmail.users.settings.cse.identities.delete",
       "summary": "Deletes a client-side encryption identity. The authenticated user can no longer use the identity to send encrypted messages. You cannot restore the identity after you delete it. Instead, use the CreateCseIdentity method to create another identity with the same configuration. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Deletes a client-side encryption identity. The authenticated user can no longer use the identity to send encrypted messages. You cannot restore the identity after you delete it. Instead, use the CreateCseIdentity method to create another identity with the same configuration. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -9110,7 +9110,7 @@
     },
     {
       "method": "PATCH",
-      "path": "gmail/v1/users/{userId}/settings/cse/identities/{emailAddress}",
+      "path": "/gmail/v1/users/{userId}/settings/cse/identities/{emailAddress}",
       "operation_id": "gmail.users.settings.cse.identities.patch",
       "summary": "Associates a different key pair with an existing client-side encryption identity. The updated key pair must validate against Google's [S/MIME certificate profiles](https://support.google.com/a/answer/7300887). For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
       "description": "Associates a different key pair with an existing client-side encryption identity. The updated key pair must validate against Google's [S/MIME certificate profiles](https://support.google.com/a/answer/7300887). For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.",
@@ -9140,7 +9140,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/delegates/{delegateEmail}",
+      "path": "/gmail/v1/users/{userId}/settings/delegates/{delegateEmail}",
       "operation_id": "gmail.users.settings.delegates.get",
       "summary": "Gets the specified delegate. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). A delegate user must be referred to by their primary email address, and not an email alias. This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Gets the specified delegate. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). A delegate user must be referred to by their primary email address, and not an email alias. This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -9172,7 +9172,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/delegates",
+      "path": "/gmail/v1/users/{userId}/settings/delegates",
       "operation_id": "gmail.users.settings.delegates.create",
       "summary": "Adds a delegate with its verification status set directly to `accepted`, without sending any verification email. The delegate user must be a member of the same Google Workspace organization as the delegator user. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). Gmail imposes limitations on the number of delegates and delegators each user in a Google Workspace organization can have. These limits depend on your organization, but in general each user can have up to 25 delegates and up to 10 delegators. A delegate user must be referred to by their primary email address, and not an email alias. When a new delegate is created, there may be up to a one minute delay before the new delegate is available for use. This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Adds a delegate with its verification status set directly to `accepted`, without sending any verification email. The delegate user must be a member of the same Google Workspace organization as the delegator user. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). Gmail imposes limitations on the number of delegates and delegators each user in a Google Workspace organization can have. These limits depend on your organization, but in general each user can have up to 25 delegates and up to 10 delegators. A delegate user must be referred to by their primary email address, and not an email alias. When a new delegate is created, there may be up to a one minute delay before the new delegate is available for use. This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -9195,7 +9195,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/settings/delegates/{delegateEmail}",
+      "path": "/gmail/v1/users/{userId}/settings/delegates/{delegateEmail}",
       "operation_id": "gmail.users.settings.delegates.delete",
       "summary": "Removes the specified delegate (which can be of any verification status), and revokes any verification that may have been required for using it. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). A delegate user must be referred to by their primary email address, and not an email alias. This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Removes the specified delegate (which can be of any verification status), and revokes any verification that may have been required for using it. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). A delegate user must be referred to by their primary email address, and not an email alias. This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -9224,7 +9224,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/delegates",
+      "path": "/gmail/v1/users/{userId}/settings/delegates",
       "operation_id": "gmail.users.settings.delegates.list",
       "summary": "Lists the delegates for the specified account. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Lists the delegates for the specified account. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -9250,7 +9250,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}",
+      "path": "/gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}",
       "operation_id": "gmail.users.settings.forwardingAddresses.delete",
       "summary": "Deletes the specified forwarding address and revokes any verification that may have been required. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Deletes the specified forwarding address and revokes any verification that may have been required. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -9279,7 +9279,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/forwardingAddresses",
+      "path": "/gmail/v1/users/{userId}/settings/forwardingAddresses",
       "operation_id": "gmail.users.settings.forwardingAddresses.list",
       "summary": "Lists the forwarding addresses for the specified account. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings).",
       "description": "Lists the forwarding addresses for the specified account. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings).",
@@ -9305,7 +9305,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}",
+      "path": "/gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}",
       "operation_id": "gmail.users.settings.forwardingAddresses.get",
       "summary": "Gets the specified forwarding address. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings).",
       "description": "Gets the specified forwarding address. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings).",
@@ -9337,7 +9337,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/settings/forwardingAddresses",
+      "path": "/gmail/v1/users/{userId}/settings/forwardingAddresses",
       "operation_id": "gmail.users.settings.forwardingAddresses.create",
       "summary": "Creates a forwarding address. If ownership verification is required, a message will be sent to the recipient and the resource's verification status will be set to `pending`; otherwise, the resource will be created with verification status set to `accepted`. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
       "description": "Creates a forwarding address. If ownership verification is required, a message will be sent to the recipient and the resource's verification status will be set to `pending`; otherwise, the resource will be created with verification status set to `accepted`. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings). This method is only available to service account clients that have been delegated domain-wide authority.",
@@ -9360,7 +9360,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/threads/{id}",
+      "path": "/gmail/v1/users/{userId}/threads/{id}",
       "operation_id": "gmail.users.threads.delete",
       "summary": "Immediately and permanently deletes the specified thread. Any messages that belong to the thread are also deleted. This operation cannot be undone. Prefer `threads.trash` instead. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
       "description": "Immediately and permanently deletes the specified thread. Any messages that belong to the thread are also deleted. This operation cannot be undone. Prefer `threads.trash` instead. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
@@ -9389,7 +9389,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/threads/{id}/modify",
+      "path": "/gmail/v1/users/{userId}/threads/{id}/modify",
       "operation_id": "gmail.users.threads.modify",
       "summary": "Modifies the labels applied to the thread. This applies to all messages in the thread. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
       "description": "Modifies the labels applied to the thread. This applies to all messages in the thread. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
@@ -9419,7 +9419,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/threads/{id}/untrash",
+      "path": "/gmail/v1/users/{userId}/threads/{id}/untrash",
       "operation_id": "gmail.users.threads.untrash",
       "summary": "Removes the specified thread from the trash. Any messages that belong to the thread are also removed from the trash. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
       "description": "Removes the specified thread from the trash. Any messages that belong to the thread are also removed from the trash. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
@@ -9449,7 +9449,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/threads/{id}/trash",
+      "path": "/gmail/v1/users/{userId}/threads/{id}/trash",
       "operation_id": "gmail.users.threads.trash",
       "summary": "Moves the specified thread to the trash. Any messages that belong to the thread are also moved to the trash. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
       "description": "Moves the specified thread to the trash. Any messages that belong to the thread are also moved to the trash. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
@@ -9479,7 +9479,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/threads",
+      "path": "/gmail/v1/users/{userId}/threads",
       "operation_id": "gmail.users.threads.list",
       "summary": "Lists the threads in the user's mailbox. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
       "description": "Lists the threads in the user's mailbox. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
@@ -9535,7 +9535,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/threads/{id}",
+      "path": "/gmail/v1/users/{userId}/threads/{id}",
       "operation_id": "gmail.users.threads.get",
       "summary": "Gets the specified thread. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
       "description": "Gets the specified thread. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
@@ -9582,7 +9582,7 @@
     },
     {
       "method": "DELETE",
-      "path": "gmail/v1/users/{userId}/drafts/{id}",
+      "path": "/gmail/v1/users/{userId}/drafts/{id}",
       "operation_id": "gmail.users.drafts.delete",
       "summary": "Immediately and permanently deletes the specified draft. Does not simply trash it. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
       "description": "Immediately and permanently deletes the specified draft. Does not simply trash it. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
@@ -9614,7 +9614,7 @@
     },
     {
       "method": "PUT",
-      "path": "gmail/v1/users/{userId}/drafts/{id}",
+      "path": "/gmail/v1/users/{userId}/drafts/{id}",
       "operation_id": "gmail.users.drafts.update",
       "summary": "Replaces a draft's content. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
       "description": "Replaces a draft's content. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
@@ -9646,7 +9646,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/drafts",
+      "path": "/gmail/v1/users/{userId}/drafts",
       "operation_id": "gmail.users.drafts.list",
       "summary": "Lists the drafts in the user's mailbox. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
       "description": "Lists the drafts in the user's mailbox. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
@@ -9696,7 +9696,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/drafts",
+      "path": "/gmail/v1/users/{userId}/drafts",
       "operation_id": "gmail.users.drafts.create",
       "summary": "Creates a draft with the `DRAFT` label. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
       "description": "Creates a draft with the `DRAFT` label. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
@@ -9722,7 +9722,7 @@
     },
     {
       "method": "GET",
-      "path": "gmail/v1/users/{userId}/drafts/{id}",
+      "path": "/gmail/v1/users/{userId}/drafts/{id}",
       "operation_id": "gmail.users.drafts.get",
       "summary": "Gets the specified draft. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
       "description": "Gets the specified draft. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
@@ -9760,7 +9760,7 @@
     },
     {
       "method": "POST",
-      "path": "gmail/v1/users/{userId}/drafts/send",
+      "path": "/gmail/v1/users/{userId}/drafts/send",
       "operation_id": "gmail.users.drafts.send",
       "summary": "Sends the specified, existing draft to the recipients in the `To`, `Cc`, and `Bcc` headers. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
       "description": "Sends the specified, existing draft to the recipients in the `To`, `Cc`, and `Bcc` headers. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).",
@@ -9786,7 +9786,7 @@
     },
     {
       "method": "POST",
-      "path": "channels/stop",
+      "path": "/channels/stop",
       "operation_id": "drive.channels.stop",
       "summary": "Stops watching resources through this channel. For more information, see [Notifications for resource changes](https://developers.google.com/workspace/drive/api/guides/push).",
       "description": "Stops watching resources through this channel. For more information, see [Notifications for resource changes](https://developers.google.com/workspace/drive/api/guides/push).",
@@ -9809,7 +9809,7 @@
     },
     {
       "method": "GET",
-      "path": "apps/{appId}",
+      "path": "/apps/{appId}",
       "operation_id": "drive.apps.get",
       "summary": "Gets a specific app. For more information, see [Return user info](https://developers.google.com/workspace/drive/api/guides/user-info).",
       "description": "Gets a specific app. For more information, see [Return user info](https://developers.google.com/workspace/drive/api/guides/user-info).",
@@ -9838,7 +9838,7 @@
     },
     {
       "method": "GET",
-      "path": "apps",
+      "path": "/apps",
       "operation_id": "drive.apps.list",
       "summary": "Lists a user's installed apps. For more information, see [Return user info](https://developers.google.com/workspace/drive/api/guides/user-info).",
       "description": "Lists a user's installed apps. For more information, see [Return user info](https://developers.google.com/workspace/drive/api/guides/user-info).",
@@ -9873,7 +9873,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/comments",
+      "path": "/files/{fileId}/comments",
       "operation_id": "drive.comments.create",
       "summary": "Creates a comment on a file. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
       "description": "Creates a comment on a file. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
@@ -9897,7 +9897,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/comments/{commentId}",
+      "path": "/files/{fileId}/comments/{commentId}",
       "operation_id": "drive.comments.get",
       "summary": "Gets a comment by ID. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
       "description": "Gets a comment by ID. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
@@ -9935,7 +9935,7 @@
     },
     {
       "method": "DELETE",
-      "path": "files/{fileId}/comments/{commentId}",
+      "path": "/files/{fileId}/comments/{commentId}",
       "operation_id": "drive.comments.delete",
       "summary": "Deletes a comment. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
       "description": "Deletes a comment. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
@@ -9965,7 +9965,7 @@
     },
     {
       "method": "PATCH",
-      "path": "files/{fileId}/comments/{commentId}",
+      "path": "/files/{fileId}/comments/{commentId}",
       "operation_id": "drive.comments.update",
       "summary": "Updates a comment with patch semantics. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
       "description": "Updates a comment with patch semantics. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
@@ -9995,7 +9995,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/comments",
+      "path": "/files/{fileId}/comments",
       "operation_id": "drive.comments.list",
       "summary": "Lists a file's comments. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
       "description": "Lists a file's comments. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
@@ -10045,7 +10045,7 @@
     },
     {
       "method": "DELETE",
-      "path": "teamdrives/{teamDriveId}",
+      "path": "/teamdrives/{teamDriveId}",
       "operation_id": "drive.teamdrives.delete",
       "summary": "Deprecated: Use `drives.delete` instead.",
       "description": "Deprecated: Use `drives.delete` instead.",
@@ -10068,7 +10068,7 @@
     },
     {
       "method": "PATCH",
-      "path": "teamdrives/{teamDriveId}",
+      "path": "/teamdrives/{teamDriveId}",
       "operation_id": "drive.teamdrives.update",
       "summary": "Deprecated: Use `drives.update` instead.",
       "description": "Deprecated: Use `drives.update` instead.",
@@ -10097,7 +10097,7 @@
     },
     {
       "method": "GET",
-      "path": "teamdrives",
+      "path": "/teamdrives",
       "operation_id": "drive.teamdrives.list",
       "summary": "Deprecated: Use `drives.list` instead.",
       "description": "Deprecated: Use `drives.list` instead.",
@@ -10139,7 +10139,7 @@
     },
     {
       "method": "POST",
-      "path": "teamdrives",
+      "path": "/teamdrives",
       "operation_id": "drive.teamdrives.create",
       "summary": "Deprecated: Use `drives.create` instead.",
       "description": "Deprecated: Use `drives.create` instead.",
@@ -10162,7 +10162,7 @@
     },
     {
       "method": "GET",
-      "path": "teamdrives/{teamDriveId}",
+      "path": "/teamdrives/{teamDriveId}",
       "operation_id": "drive.teamdrives.get",
       "summary": "Deprecated: Use `drives.get` instead.",
       "description": "Deprecated: Use `drives.get` instead.",
@@ -10192,7 +10192,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/comments/{commentId}/replies",
+      "path": "/files/{fileId}/comments/{commentId}/replies",
       "operation_id": "drive.replies.create",
       "summary": "Creates a reply to a comment. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
       "description": "Creates a reply to a comment. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
@@ -10222,7 +10222,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/comments/{commentId}/replies/{replyId}",
+      "path": "/files/{fileId}/comments/{commentId}/replies/{replyId}",
       "operation_id": "drive.replies.get",
       "summary": "Gets a reply by ID. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
       "description": "Gets a reply by ID. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
@@ -10266,7 +10266,7 @@
     },
     {
       "method": "DELETE",
-      "path": "files/{fileId}/comments/{commentId}/replies/{replyId}",
+      "path": "/files/{fileId}/comments/{commentId}/replies/{replyId}",
       "operation_id": "drive.replies.delete",
       "summary": "Deletes a reply. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
       "description": "Deletes a reply. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
@@ -10302,7 +10302,7 @@
     },
     {
       "method": "PATCH",
-      "path": "files/{fileId}/comments/{commentId}/replies/{replyId}",
+      "path": "/files/{fileId}/comments/{commentId}/replies/{replyId}",
       "operation_id": "drive.replies.update",
       "summary": "Updates a reply with patch semantics. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
       "description": "Updates a reply with patch semantics. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
@@ -10338,7 +10338,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/comments/{commentId}/replies",
+      "path": "/files/{fileId}/comments/{commentId}/replies",
       "operation_id": "drive.replies.list",
       "summary": "Lists a comment's replies. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
       "description": "Lists a comment's replies. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).",
@@ -10388,7 +10388,7 @@
     },
     {
       "method": "DELETE",
-      "path": "files/{fileId}/permissions/{permissionId}",
+      "path": "/files/{fileId}/permissions/{permissionId}",
       "operation_id": "drive.permissions.delete",
       "summary": "Deletes a permission. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). **Warning:** Concurrent permissions operations on the same file aren't supported; only the last update is applied.",
       "description": "Deletes a permission. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). **Warning:** Concurrent permissions operations on the same file aren't supported; only the last update is applied.",
@@ -10442,7 +10442,7 @@
     },
     {
       "method": "PATCH",
-      "path": "files/{fileId}/permissions/{permissionId}",
+      "path": "/files/{fileId}/permissions/{permissionId}",
       "operation_id": "drive.permissions.update",
       "summary": "Updates a permission with patch semantics. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). **Warning:** Concurrent permissions operations on the same file aren't supported; only the last update is applied.",
       "description": "Updates a permission with patch semantics. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). **Warning:** Concurrent permissions operations on the same file aren't supported; only the last update is applied.",
@@ -10508,7 +10508,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/permissions",
+      "path": "/files/{fileId}/permissions",
       "operation_id": "drive.permissions.list",
       "summary": "Lists a file's or shared drive's permissions. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing).",
       "description": "Lists a file's or shared drive's permissions. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing).",
@@ -10573,7 +10573,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/permissions",
+      "path": "/files/{fileId}/permissions",
       "operation_id": "drive.permissions.create",
       "summary": "Creates a permission for a file or shared drive. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). **Warning:** Concurrent permissions operations on the same file aren't supported; only the last update is applied.",
       "description": "Creates a permission for a file or shared drive. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). **Warning:** Concurrent permissions operations on the same file aren't supported; only the last update is applied.",
@@ -10651,7 +10651,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/permissions/{permissionId}",
+      "path": "/files/{fileId}/permissions/{permissionId}",
       "operation_id": "drive.permissions.get",
       "summary": "Gets a permission by ID. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing).",
       "description": "Gets a permission by ID. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing).",
@@ -10704,7 +10704,7 @@
     },
     {
       "method": "GET",
-      "path": "operations/{name}",
+      "path": "/operations/{name}",
       "operation_id": "drive.operations.get",
       "summary": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
       "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
@@ -10730,7 +10730,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/revisions/{revisionId}",
+      "path": "/files/{fileId}/revisions/{revisionId}",
       "operation_id": "drive.revisions.get",
       "summary": "Gets a revision's metadata or content by ID. For more information, see [Manage file revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions).",
       "description": "Gets a revision's metadata or content by ID. For more information, see [Manage file revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions).",
@@ -10772,7 +10772,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/revisions",
+      "path": "/files/{fileId}/revisions",
       "operation_id": "drive.revisions.list",
       "summary": "Lists a file's revisions. For more information, see [Manage file revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions). **Important:** The list of revisions returned by this method might be incomplete for files with a large revision history, including frequently edited Google Docs, Sheets, and Slides. Older revisions might be omitted from the response, meaning the first revision returned may not be the oldest existing revision. The revision history visible in the Workspace editor user interface might be more complete than the list returned by the API.",
       "description": "Lists a file's revisions. For more information, see [Manage file revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions). **Important:** The list of revisions returned by this method might be incomplete for files with a large revision history, including frequently edited Google Docs, Sheets, and Slides. Older revisions might be omitted from the response, meaning the first revision returned may not be the oldest existing revision. The revision history visible in the Workspace editor user interface might be more complete than the list returned by the API.",
@@ -10814,7 +10814,7 @@
     },
     {
       "method": "DELETE",
-      "path": "files/{fileId}/revisions/{revisionId}",
+      "path": "/files/{fileId}/revisions/{revisionId}",
       "operation_id": "drive.revisions.delete",
       "summary": "Permanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can't be deleted. For more information, see [Manage file revisions](https://developers.google.com/drive/api/guides/manage-revisions).",
       "description": "Permanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can't be deleted. For more information, see [Manage file revisions](https://developers.google.com/drive/api/guides/manage-revisions).",
@@ -10845,7 +10845,7 @@
     },
     {
       "method": "PATCH",
-      "path": "files/{fileId}/revisions/{revisionId}",
+      "path": "/files/{fileId}/revisions/{revisionId}",
       "operation_id": "drive.revisions.update",
       "summary": "Updates a revision with patch semantics. For more information, see [Manage file revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions).",
       "description": "Updates a revision with patch semantics. For more information, see [Manage file revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions).",
@@ -10876,7 +10876,7 @@
     },
     {
       "method": "GET",
-      "path": "changes/startPageToken",
+      "path": "/changes/startPageToken",
       "operation_id": "drive.changes.getStartPageToken",
       "summary": "Gets the starting pageToken for listing future changes. For more information, see [Retrieve changes](https://developers.google.com/workspace/drive/api/guides/manage-changes).",
       "description": "Gets the starting pageToken for listing future changes. For more information, see [Retrieve changes](https://developers.google.com/workspace/drive/api/guides/manage-changes).",
@@ -10924,7 +10924,7 @@
     },
     {
       "method": "GET",
-      "path": "changes",
+      "path": "/changes",
       "operation_id": "drive.changes.list",
       "summary": "Lists the changes for a user or shared drive. For more information, see [Retrieve changes](https://developers.google.com/workspace/drive/api/guides/manage-changes).",
       "description": "Lists the changes for a user or shared drive. For more information, see [Retrieve changes](https://developers.google.com/workspace/drive/api/guides/manage-changes).",
@@ -11032,7 +11032,7 @@
     },
     {
       "method": "POST",
-      "path": "changes/watch",
+      "path": "/changes/watch",
       "operation_id": "drive.changes.watch",
       "summary": "Subscribes to changes for a user. For more information, see [Notifications for resource changes](https://developers.google.com/workspace/drive/api/guides/push).",
       "description": "Subscribes to changes for a user. For more information, see [Notifications for resource changes](https://developers.google.com/workspace/drive/api/guides/push).",
@@ -11140,7 +11140,7 @@
     },
     {
       "method": "GET",
-      "path": "about",
+      "path": "/about",
       "operation_id": "drive.about.get",
       "summary": "Gets information about the user, the user's Drive, and system capabilities. For more information, see [Return user info](https://developers.google.com/workspace/drive/api/guides/user-info). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
       "description": "Gets information about the user, the user's Drive, and system capabilities. For more information, see [Return user info](https://developers.google.com/workspace/drive/api/guides/user-info). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).",
@@ -11162,7 +11162,7 @@
     },
     {
       "method": "POST",
-      "path": "drives",
+      "path": "/drives",
       "operation_id": "drive.drives.create",
       "summary": "Creates a shared drive. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
       "description": "Creates a shared drive. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
@@ -11185,7 +11185,7 @@
     },
     {
       "method": "GET",
-      "path": "drives/{driveId}",
+      "path": "/drives/{driveId}",
       "operation_id": "drive.drives.get",
       "summary": "Gets a shared drive's metadata by ID. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
       "description": "Gets a shared drive's metadata by ID. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
@@ -11215,7 +11215,7 @@
     },
     {
       "method": "POST",
-      "path": "drives/{driveId}/unhide",
+      "path": "/drives/{driveId}/unhide",
       "operation_id": "drive.drives.unhide",
       "summary": "Restores a shared drive to the default view. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
       "description": "Restores a shared drive to the default view. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
@@ -11238,7 +11238,7 @@
     },
     {
       "method": "GET",
-      "path": "drives",
+      "path": "/drives",
       "operation_id": "drive.drives.list",
       "summary": " Lists the user's shared drives. This method accepts the `q` parameter, which is a search query combining one or more search terms. For more information, see the [Search for shared drives](https://developers.google.com/workspace/drive/api/guides/search-shareddrives) guide.",
       "description": " Lists the user's shared drives. This method accepts the `q` parameter, which is a search query combining one or more search terms. For more information, see the [Search for shared drives](https://developers.google.com/workspace/drive/api/guides/search-shareddrives) guide.",
@@ -11280,7 +11280,7 @@
     },
     {
       "method": "DELETE",
-      "path": "drives/{driveId}",
+      "path": "/drives/{driveId}",
       "operation_id": "drive.drives.delete",
       "summary": "Permanently deletes a shared drive for which the user is an `organizer`. The shared drive cannot contain any untrashed items. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
       "description": "Permanently deletes a shared drive for which the user is an `organizer`. The shared drive cannot contain any untrashed items. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
@@ -11315,7 +11315,7 @@
     },
     {
       "method": "POST",
-      "path": "drives/{driveId}/hide",
+      "path": "/drives/{driveId}/hide",
       "operation_id": "drive.drives.hide",
       "summary": "Hides a shared drive from the default view. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
       "description": "Hides a shared drive from the default view. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
@@ -11338,7 +11338,7 @@
     },
     {
       "method": "PATCH",
-      "path": "drives/{driveId}",
+      "path": "/drives/{driveId}",
       "operation_id": "drive.drives.update",
       "summary": "Updates the metadata for a shared drive. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
       "description": "Updates the metadata for a shared drive. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).",
@@ -11367,7 +11367,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/approvals/{approvalId}:reassign",
+      "path": "/files/{fileId}/approvals/{approvalId}:reassign",
       "operation_id": "drive.approvals.reassign",
       "summary": "Reassigns the reviewers on an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). Adds or replaces reviewers in the ReviewerResponse of the approval. This can be called by any user with the `writer` permission on the file while the approval Status is `IN_PROGRESS` and the Response for the reviewer being reassigned is `NO_RESPONSE`. A user with the `reader` permission can only reassign an approval that's assigned to themselves. Removing a reviewer isn't allowed.",
       "description": "Reassigns the reviewers on an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). Adds or replaces reviewers in the ReviewerResponse of the approval. This can be called by any user with the `writer` permission on the file while the approval Status is `IN_PROGRESS` and the Response for the reviewer being reassigned is `NO_RESPONSE`. A user with the `reader` permission can only reassign an approval that's assigned to themselves. Removing a reviewer isn't allowed.",
@@ -11398,7 +11398,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/approvals/{approvalId}:cancel",
+      "path": "/files/{fileId}/approvals/{approvalId}:cancel",
       "operation_id": "drive.approvals.cancel",
       "summary": "Cancels an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). Updates the approval Status to `CANCELLED`. This can be called by any user with the `writer` permission on the file while the approval Status is `IN_PROGRESS`.",
       "description": "Cancels an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). Updates the approval Status to `CANCELLED`. This can be called by any user with the `writer` permission on the file while the approval Status is `IN_PROGRESS`.",
@@ -11429,7 +11429,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/approvals/{approvalId}",
+      "path": "/files/{fileId}/approvals/{approvalId}",
       "operation_id": "drive.approvals.get",
       "summary": "Gets an approval by ID. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals).",
       "description": "Gets an approval by ID. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals).",
@@ -11463,7 +11463,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/approvals/{approvalId}:comment",
+      "path": "/files/{fileId}/approvals/{approvalId}:comment",
       "operation_id": "drive.approvals.comment",
       "summary": "Comments on an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This sends a notification to both the initiator and the reviewers. Additionally, a message is also added to the approval activity log.",
       "description": "Comments on an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This sends a notification to both the initiator and the reviewers. Additionally, a message is also added to the approval activity log.",
@@ -11494,7 +11494,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/approvals:start",
+      "path": "/files/{fileId}/approvals:start",
       "operation_id": "drive.approvals.start",
       "summary": "Starts an approval on a file. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals).",
       "description": "Starts an approval on a file. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals).",
@@ -11519,7 +11519,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/approvals/{approvalId}:approve",
+      "path": "/files/{fileId}/approvals/{approvalId}:approve",
       "operation_id": "drive.approvals.approve",
       "summary": "Approves an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This is used to update the ReviewerResponse of the requesting user with a Response of `APPROVED`. If this is the last required reviewer response, this also completes the approval and sets the approval Status to `APPROVED`.",
       "description": "Approves an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This is used to update the ReviewerResponse of the requesting user with a Response of `APPROVED`. If this is the last required reviewer response, this also completes the approval and sets the approval Status to `APPROVED`.",
@@ -11550,7 +11550,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/approvals",
+      "path": "/files/{fileId}/approvals",
       "operation_id": "drive.approvals.list",
       "summary": "Lists the approvals on a file. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals).",
       "description": "Lists the approvals on a file. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals).",
@@ -11590,7 +11590,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/approvals/{approvalId}:decline",
+      "path": "/files/{fileId}/approvals/{approvalId}:decline",
       "operation_id": "drive.approvals.decline",
       "summary": "Declines an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This is used to update the ReviewerResponse of the requesting user with a Response of `DECLINED`. This also completes the approval and sets the approval Status to `DECLINED`.",
       "description": "Declines an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This is used to update the ReviewerResponse of the requesting user with a Response of `DECLINED`. This also completes the approval and sets the approval Status to `DECLINED`.",
@@ -11621,7 +11621,7 @@
     },
     {
       "method": "GET",
-      "path": "files",
+      "path": "/files",
       "operation_id": "drive.files.list",
       "summary": " Lists the user's files. For more information, see [Search for files and folders](https://developers.google.com/workspace/drive/api/guides/search-files). This method accepts the `q` parameter, which is a search query combining one or more search terms. This method returns *all* files by default, including trashed files. If you don't want trashed files to appear in the list, use the `trashed=false` query parameter to remove trashed files from the results.",
       "description": " Lists the user's files. For more information, see [Search for files and folders](https://developers.google.com/workspace/drive/api/guides/search-files). This method accepts the `q` parameter, which is a search query combining one or more search terms. This method returns *all* files by default, including trashed files. If you don't want trashed files to appear in the list, use the `trashed=false` query parameter to remove trashed files from the results.",
@@ -11735,7 +11735,7 @@
     },
     {
       "method": "DELETE",
-      "path": "files/{fileId}",
+      "path": "/files/{fileId}",
       "operation_id": "drive.files.delete",
       "summary": "Permanently deletes a file owned by the user without moving it to the trash. For more information, see [Trash or delete files and folders](https://developers.google.com/workspace/drive/api/guides/delete). If the file belongs to a shared drive, the user must be an `organizer` on the parent folder. If the target is a folder, all descendants owned by the user are also deleted.",
       "description": "Permanently deletes a file owned by the user without moving it to the trash. For more information, see [Trash or delete files and folders](https://developers.google.com/workspace/drive/api/guides/delete). If the file belongs to a shared drive, the user must be an `organizer` on the parent folder. If the target is a folder, all descendants owned by the user are also deleted.",
@@ -11778,7 +11778,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/download",
+      "path": "/files/{fileId}/download",
       "operation_id": "drive.files.download",
       "summary": "Downloads the content of a file. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads). Operations are valid for 24 hours from the time of creation.",
       "description": "Downloads the content of a file. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads). Operations are valid for 24 hours from the time of creation.",
@@ -11815,7 +11815,7 @@
     },
     {
       "method": "POST",
-      "path": "files",
+      "path": "/files",
       "operation_id": "drive.files.create",
       "summary": " Creates a file. For more information, see [Create and manage files](https://developers.google.com/workspace/drive/api/guides/create-file). This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:* `*/*` (Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information, see [Google Workspace and Google Drive supported MIME types](https://developers.google.com/workspace/drive/api/guides/mime-types).) For more information on uploading files, see [Upload file data](https://developers.google.com/workspace/drive/api/guides/manage-uploads). Apps creating shortcuts with the `create` method must specify the MIME type `application/vnd.google-apps.shortcut`. Apps should specify a file extension in the `name` property when inserting files with the API. For example, an operation to insert a JPEG file should specify something like `\"name\": \"cat.jpg\"` in the metadata. Subsequent `GET` requests include the read-only `fileExtension` property populated with the extension originally specified in the `name` property. When a Google Drive user requests to download a file, or when the file is downloaded through the sync client, Drive builds a full filename (with extension) based on the name. In cases where the extension is missing, Drive attempts to determine the extension based on the file's MIME type.",
       "description": " Creates a file. For more information, see [Create and manage files](https://developers.google.com/workspace/drive/api/guides/create-file). This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:* `*/*` (Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information, see [Google Workspace and Google Drive supported MIME types](https://developers.google.com/workspace/drive/api/guides/mime-types).) For more information on uploading files, see [Upload file data](https://developers.google.com/workspace/drive/api/guides/manage-uploads). Apps creating shortcuts with the `create` method must specify the MIME type `application/vnd.google-apps.shortcut`. Apps should specify a file extension in the `name` property when inserting files with the API. For example, an operation to insert a JPEG file should specify something like `\"name\": \"cat.jpg\"` in the metadata. Subsequent `GET` requests include the read-only `fileExtension` property populated with the extension originally specified in the `name` property. When a Google Drive user requests to download a file, or when the file is downloaded through the sync client, Drive builds a full filename (with extension) based on the name. In cases where the extension is missing, Drive attempts to determine the extension based on the file's MIME type.",
@@ -11888,7 +11888,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/copy",
+      "path": "/files/{fileId}/copy",
       "operation_id": "drive.files.copy",
       "summary": "Creates a copy of a file and applies any requested updates with patch semantics. For more information, see [Create and manage files](https://developers.google.com/workspace/drive/api/guides/create-file).",
       "description": "Creates a copy of a file and applies any requested updates with patch semantics. For more information, see [Create and manage files](https://developers.google.com/workspace/drive/api/guides/create-file).",
@@ -11962,7 +11962,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/modifyLabels",
+      "path": "/files/{fileId}/modifyLabels",
       "operation_id": "drive.files.modifyLabels",
       "summary": "Modifies the set of labels applied to a file. For more information, see [Set a label field on a file](https://developers.google.com/workspace/drive/api/guides/set-label). Returns a list of the labels that were added or modified.",
       "description": "Modifies the set of labels applied to a file. For more information, see [Set a label field on a file](https://developers.google.com/workspace/drive/api/guides/set-label). Returns a list of the labels that were added or modified.",
@@ -11987,7 +11987,7 @@
     },
     {
       "method": "GET",
-      "path": "files/generateCseToken",
+      "path": "/files/generateCseToken",
       "operation_id": "drive.files.generateCseToken",
       "summary": "Generates a CSE token which can be used to create or update CSE files.",
       "description": "Generates a CSE token which can be used to create or update CSE files.",
@@ -12016,7 +12016,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/listLabels",
+      "path": "/files/{fileId}/listLabels",
       "operation_id": "drive.files.listLabels",
       "summary": "Lists the labels on a file. For more information, see [List labels on a file](https://developers.google.com/workspace/drive/api/guides/list-labels).",
       "description": "Lists the labels on a file. For more information, see [List labels on a file](https://developers.google.com/workspace/drive/api/guides/list-labels).",
@@ -12056,7 +12056,7 @@
     },
     {
       "method": "PATCH",
-      "path": "files/{fileId}",
+      "path": "/files/{fileId}",
       "operation_id": "drive.files.update",
       "summary": " Updates a file's metadata, content, or both. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might be changed automatically, such as `modifiedDate`. This method supports patch semantics. This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:* `*/*` (Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information, see [Google Workspace and Google Drive supported MIME types](https://developers.google.com/workspace/drive/api/guides/mime-types).) For more information on uploading files, see [Upload file data](https://developers.google.com/workspace/drive/api/guides/manage-uploads).",
       "description": " Updates a file's metadata, content, or both. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might be changed automatically, such as `modifiedDate`. This method supports patch semantics. This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:* `*/*` (Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information, see [Google Workspace and Google Drive supported MIME types](https://developers.google.com/workspace/drive/api/guides/mime-types).) For more information on uploading files, see [Upload file data](https://developers.google.com/workspace/drive/api/guides/manage-uploads).",
@@ -12143,7 +12143,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}",
+      "path": "/files/{fileId}",
       "operation_id": "drive.files.get",
       "summary": " Gets a file's metadata or content by ID. For more information, see [Search for files and folders](https://developers.google.com/workspace/drive/api/guides/search-files). If you provide the URL parameter `alt=media`, then the response includes the file contents in the response body. Downloading content with `alt=media` only works if the file is stored in Drive. To download Google Docs, Sheets, and Slides use [`files.export`](https://developers.google.com/workspace/drive/api/reference/rest/v3/files/export) instead. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads).",
       "description": " Gets a file's metadata or content by ID. For more information, see [Search for files and folders](https://developers.google.com/workspace/drive/api/guides/search-files). If you provide the URL parameter `alt=media`, then the response includes the file contents in the response body. Downloading content with `alt=media` only works if the file is stored in Drive. To download Google Docs, Sheets, and Slides use [`files.export`](https://developers.google.com/workspace/drive/api/reference/rest/v3/files/export) instead. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads).",
@@ -12203,7 +12203,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/export",
+      "path": "/files/{fileId}/export",
       "operation_id": "drive.files.export",
       "summary": "Exports a Google Workspace document to the requested MIME type and returns exported byte content. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads). Note that the exported content is limited to 10 MB.",
       "description": "Exports a Google Workspace document to the requested MIME type and returns exported byte content. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads). Note that the exported content is limited to 10 MB.",
@@ -12235,7 +12235,7 @@
     },
     {
       "method": "GET",
-      "path": "files/generateIds",
+      "path": "/files/generateIds",
       "operation_id": "drive.files.generateIds",
       "summary": "Generates a set of file IDs which can be provided in create or copy requests. For more information, see [Create and manage files](https://developers.google.com/workspace/drive/api/guides/create-file).",
       "description": "Generates a set of file IDs which can be provided in create or copy requests. For more information, see [Create and manage files](https://developers.google.com/workspace/drive/api/guides/create-file).",
@@ -12272,7 +12272,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/watch",
+      "path": "/files/{fileId}/watch",
       "operation_id": "drive.files.watch",
       "summary": "Subscribes to changes to a file. For more information, see [Notifications for resource changes](https://developers.google.com/workspace/drive/api/guides/push).",
       "description": "Subscribes to changes to a file. For more information, see [Notifications for resource changes](https://developers.google.com/workspace/drive/api/guides/push).",
@@ -12332,7 +12332,7 @@
     },
     {
       "method": "DELETE",
-      "path": "files/trash",
+      "path": "/files/trash",
       "operation_id": "drive.files.emptyTrash",
       "summary": "Permanently deletes all of the user's trashed files. For more information, see [Trash or delete files and folders](https://developers.google.com/workspace/drive/api/guides/delete).",
       "description": "Permanently deletes all of the user's trashed files. For more information, see [Trash or delete files and folders](https://developers.google.com/workspace/drive/api/guides/delete).",
@@ -12361,7 +12361,7 @@
     },
     {
       "method": "POST",
-      "path": "files/{fileId}/accessproposals/{proposalId}:resolve",
+      "path": "/files/{fileId}/accessproposals/{proposalId}:resolve",
       "operation_id": "drive.accessproposals.resolve",
       "summary": "Approves or denies an access proposal. For more information, see [Manage pending access proposals](https://developers.google.com/workspace/drive/api/guides/pending-access).",
       "description": "Approves or denies an access proposal. For more information, see [Manage pending access proposals](https://developers.google.com/workspace/drive/api/guides/pending-access).",
@@ -12391,7 +12391,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/accessproposals/{proposalId}",
+      "path": "/files/{fileId}/accessproposals/{proposalId}",
       "operation_id": "drive.accessproposals.get",
       "summary": "Retrieves an access proposal by ID. For more information, see [Manage pending access proposals](https://developers.google.com/workspace/drive/api/guides/pending-access).",
       "description": "Retrieves an access proposal by ID. For more information, see [Manage pending access proposals](https://developers.google.com/workspace/drive/api/guides/pending-access).",
@@ -12424,7 +12424,7 @@
     },
     {
       "method": "GET",
-      "path": "files/{fileId}/accessproposals",
+      "path": "/files/{fileId}/accessproposals",
       "operation_id": "drive.accessproposals.list",
       "summary": "List the access proposals on a file. For more information, see [Manage pending access proposals](https://developers.google.com/workspace/drive/api/guides/pending-access). Note: Only approvers are able to list access proposals on a file. If the user isn't an approver, a 403 error is returned.",
       "description": "List the access proposals on a file. For more information, see [Manage pending access proposals](https://developers.google.com/workspace/drive/api/guides/pending-access). Note: Only approvers are able to list access proposals on a file. If the user isn't an approver, a 403 error is returned.",
@@ -12463,7 +12463,7 @@
     },
     {
       "method": "POST",
-      "path": "users/me/calendarList/watch",
+      "path": "/users/me/calendarList/watch",
       "operation_id": "calendar.calendarList.watch",
       "summary": "Watch for changes to CalendarList resources.",
       "description": "Watch for changes to CalendarList resources.",
@@ -12519,7 +12519,7 @@
     },
     {
       "method": "GET",
-      "path": "users/me/calendarList",
+      "path": "/users/me/calendarList",
       "operation_id": "calendar.calendarList.list",
       "summary": "Returns the calendars on the user's calendar list.",
       "description": "Returns the calendars on the user's calendar list.",
@@ -12575,7 +12575,7 @@
     },
     {
       "method": "PUT",
-      "path": "users/me/calendarList/{calendarId}",
+      "path": "/users/me/calendarList/{calendarId}",
       "operation_id": "calendar.calendarList.update",
       "summary": "Updates an existing calendar on the user's calendar list.",
       "description": "Updates an existing calendar on the user's calendar list.",
@@ -12606,7 +12606,7 @@
     },
     {
       "method": "GET",
-      "path": "users/me/calendarList/{calendarId}",
+      "path": "/users/me/calendarList/{calendarId}",
       "operation_id": "calendar.calendarList.get",
       "summary": "Returns a calendar from the user's calendar list.",
       "description": "Returns a calendar from the user's calendar list.",
@@ -12633,7 +12633,7 @@
     },
     {
       "method": "POST",
-      "path": "users/me/calendarList",
+      "path": "/users/me/calendarList",
       "operation_id": "calendar.calendarList.insert",
       "summary": "Inserts an existing calendar into the user's calendar list.",
       "description": "Inserts an existing calendar into the user's calendar list.",
@@ -12657,7 +12657,7 @@
     },
     {
       "method": "DELETE",
-      "path": "users/me/calendarList/{calendarId}",
+      "path": "/users/me/calendarList/{calendarId}",
       "operation_id": "calendar.calendarList.delete",
       "summary": "Removes a calendar from the user's calendar list.",
       "description": "Removes a calendar from the user's calendar list.",
@@ -12682,7 +12682,7 @@
     },
     {
       "method": "PATCH",
-      "path": "users/me/calendarList/{calendarId}",
+      "path": "/users/me/calendarList/{calendarId}",
       "operation_id": "calendar.calendarList.patch",
       "summary": "Updates an existing calendar on the user's calendar list. This method supports patch semantics.",
       "description": "Updates an existing calendar on the user's calendar list. This method supports patch semantics.",
@@ -12713,7 +12713,7 @@
     },
     {
       "method": "POST",
-      "path": "calendars",
+      "path": "/calendars",
       "operation_id": "calendar.calendars.insert",
       "summary": "Creates a secondary calendar.\nThe authenticated user for the request is made the data owner of the new calendar.\n\nNote: We recommend to authenticate as the intended data owner of the calendar. You can use domain-wide delegation of authority to allow applications to act on behalf of a specific user. Don't use a service account for authentication. If you use a service account for authentication, the service account is the data owner, which can lead to unexpected behavior. For example, if a service account is the data owner, data ownership cannot be transferred.",
       "description": "Creates a secondary calendar.\nThe authenticated user for the request is made the data owner of the new calendar.\n\nNote: We recommend to authenticate as the intended data owner of the calendar. You can use domain-wide delegation of authority to allow applications to act on behalf of a specific user. Don't use a service account for authentication. If you use a service account for authentication, the service account is the data owner, which can lead to unexpected behavior. For example, if a service account is the data owner, data ownership cannot be transferred.",
@@ -12731,7 +12731,7 @@
     },
     {
       "method": "POST",
-      "path": "calendars/{calendarId}/clear",
+      "path": "/calendars/{calendarId}/clear",
       "operation_id": "calendar.calendars.clear",
       "summary": "Clears a primary calendar. This operation deletes all events associated with the primary calendar of an account.",
       "description": "Clears a primary calendar. This operation deletes all events associated with the primary calendar of an account.",
@@ -12755,7 +12755,7 @@
     },
     {
       "method": "DELETE",
-      "path": "calendars/{calendarId}",
+      "path": "/calendars/{calendarId}",
       "operation_id": "calendar.calendars.delete",
       "summary": "Deletes a secondary calendar. Use calendars.clear for clearing all events on primary calendars.",
       "description": "Deletes a secondary calendar. Use calendars.clear for clearing all events on primary calendars.",
@@ -12780,7 +12780,7 @@
     },
     {
       "method": "PATCH",
-      "path": "calendars/{calendarId}",
+      "path": "/calendars/{calendarId}",
       "operation_id": "calendar.calendars.patch",
       "summary": "Updates metadata for a calendar. This method supports patch semantics.",
       "description": "Updates metadata for a calendar. This method supports patch semantics.",
@@ -12805,7 +12805,7 @@
     },
     {
       "method": "PUT",
-      "path": "calendars/{calendarId}",
+      "path": "/calendars/{calendarId}",
       "operation_id": "calendar.calendars.update",
       "summary": "Updates metadata for a calendar.",
       "description": "Updates metadata for a calendar.",
@@ -12830,7 +12830,7 @@
     },
     {
       "method": "GET",
-      "path": "calendars/{calendarId}",
+      "path": "/calendars/{calendarId}",
       "operation_id": "calendar.calendars.get",
       "summary": "Returns metadata for a calendar.",
       "description": "Returns metadata for a calendar.",
@@ -12857,7 +12857,7 @@
     },
     {
       "method": "POST",
-      "path": "freeBusy",
+      "path": "/freeBusy",
       "operation_id": "calendar.freebusy.query",
       "summary": "Returns free/busy information for a set of calendars.",
       "description": "Returns free/busy information for a set of calendars.",
@@ -12876,7 +12876,7 @@
     },
     {
       "method": "GET",
-      "path": "colors",
+      "path": "/colors",
       "operation_id": "calendar.colors.get",
       "summary": "Returns the color definitions for calendars and events.",
       "description": "Returns the color definitions for calendars and events.",
@@ -12900,7 +12900,7 @@
     },
     {
       "method": "POST",
-      "path": "channels/stop",
+      "path": "/channels/stop",
       "operation_id": "calendar.channels.stop",
       "summary": "Stop watching resources through this channel",
       "description": "Stop watching resources through this channel",
@@ -12929,7 +12929,7 @@
     },
     {
       "method": "PUT",
-      "path": "calendars/{calendarId}/events/{eventId}",
+      "path": "/calendars/{calendarId}/events/{eventId}",
       "operation_id": "calendar.events.update",
       "summary": "Updates an event.",
       "description": "Updates an event.",
@@ -12997,7 +12997,7 @@
     },
     {
       "method": "POST",
-      "path": "calendars/{calendarId}/events/watch",
+      "path": "/calendars/{calendarId}/events/watch",
       "operation_id": "calendar.events.watch",
       "summary": "Watch for changes to Events resources.",
       "description": "Watch for changes to Events resources.",
@@ -13136,7 +13136,7 @@
     },
     {
       "method": "POST",
-      "path": "calendars/{calendarId}/events/{eventId}/move",
+      "path": "/calendars/{calendarId}/events/{eventId}/move",
       "operation_id": "calendar.events.move",
       "summary": "Moves an event to another calendar, i.e. changes an event's organizer. Note that only default events can be moved; birthday, focusTime, fromGmail, outOfOffice and workingLocation events cannot be moved.",
       "description": "Moves an event to another calendar, i.e. changes an event's organizer. Note that only default events can be moved; birthday, focusTime, fromGmail, outOfOffice and workingLocation events cannot be moved.",
@@ -13185,7 +13185,7 @@
     },
     {
       "method": "GET",
-      "path": "calendars/{calendarId}/events/{eventId}",
+      "path": "/calendars/{calendarId}/events/{eventId}",
       "operation_id": "calendar.events.get",
       "summary": "Returns an event based on its Google Calendar ID. To retrieve an event using its iCalendar ID, call the events.list method using the iCalUID parameter.",
       "description": "Returns an event based on its Google Calendar ID. To retrieve an event using its iCalendar ID, call the events.list method using the iCalUID parameter.",
@@ -13240,7 +13240,7 @@
     },
     {
       "method": "DELETE",
-      "path": "calendars/{calendarId}/events/{eventId}",
+      "path": "/calendars/{calendarId}/events/{eventId}",
       "operation_id": "calendar.events.delete",
       "summary": "Deletes an event.",
       "description": "Deletes an event.",
@@ -13284,7 +13284,7 @@
     },
     {
       "method": "POST",
-      "path": "calendars/{calendarId}/events/quickAdd",
+      "path": "/calendars/{calendarId}/events/quickAdd",
       "operation_id": "calendar.events.quickAdd",
       "summary": "Creates an event based on a simple text string.",
       "description": "Creates an event based on a simple text string.",
@@ -13328,7 +13328,7 @@
     },
     {
       "method": "GET",
-      "path": "calendars/{calendarId}/events/{eventId}/instances",
+      "path": "/calendars/{calendarId}/events/{eventId}/instances",
       "operation_id": "calendar.events.instances",
       "summary": "Returns instances of the specified recurring event.",
       "description": "Returns instances of the specified recurring event.",
@@ -13419,7 +13419,7 @@
     },
     {
       "method": "GET",
-      "path": "calendars/{calendarId}/events",
+      "path": "/calendars/{calendarId}/events",
       "operation_id": "calendar.events.list",
       "summary": "Returns events on the specified calendar.",
       "description": "Returns events on the specified calendar.",
@@ -13558,7 +13558,7 @@
     },
     {
       "method": "POST",
-      "path": "calendars/{calendarId}/events/import",
+      "path": "/calendars/{calendarId}/events/import",
       "operation_id": "calendar.events.import",
       "summary": "Imports an event. This operation is used to add a private copy of an existing event to a calendar. Only events with an eventType of default may be imported.\nDeprecated behavior: If a non-default event is imported, its type will be changed to default and any event-type-specific properties it may have will be dropped.",
       "description": "Imports an event. This operation is used to add a private copy of an existing event to a calendar. Only events with an eventType of default may be imported.\nDeprecated behavior: If a non-default event is imported, its type will be changed to default and any event-type-specific properties it may have will be dropped.",
@@ -13596,7 +13596,7 @@
     },
     {
       "method": "POST",
-      "path": "calendars/{calendarId}/events",
+      "path": "/calendars/{calendarId}/events",
       "operation_id": "calendar.events.insert",
       "summary": "Creates an event.",
       "description": "Creates an event.",
@@ -13652,7 +13652,7 @@
     },
     {
       "method": "PATCH",
-      "path": "calendars/{calendarId}/events/{eventId}",
+      "path": "/calendars/{calendarId}/events/{eventId}",
       "operation_id": "calendar.events.patch",
       "summary": "Updates an event. This method supports patch semantics.",
       "description": "Updates an event. This method supports patch semantics.",
@@ -13720,7 +13720,7 @@
     },
     {
       "method": "GET",
-      "path": "users/me/settings/{setting}",
+      "path": "/users/me/settings/{setting}",
       "operation_id": "calendar.settings.get",
       "summary": "Returns a single user setting.",
       "description": "Returns a single user setting.",
@@ -13745,7 +13745,7 @@
     },
     {
       "method": "GET",
-      "path": "users/me/settings",
+      "path": "/users/me/settings",
       "operation_id": "calendar.settings.list",
       "summary": "Returns all user settings for the authenticated user.",
       "description": "Returns all user settings for the authenticated user.",
@@ -13782,7 +13782,7 @@
     },
     {
       "method": "POST",
-      "path": "users/me/settings/watch",
+      "path": "/users/me/settings/watch",
       "operation_id": "calendar.settings.watch",
       "summary": "Watch for changes to Settings resources.",
       "description": "Watch for changes to Settings resources.",
@@ -13819,7 +13819,7 @@
     },
     {
       "method": "POST",
-      "path": "calendars/{calendarId}/acl",
+      "path": "/calendars/{calendarId}/acl",
       "operation_id": "calendar.acl.insert",
       "summary": "Creates an access control rule.",
       "description": "Creates an access control rule.",
@@ -13849,7 +13849,7 @@
     },
     {
       "method": "DELETE",
-      "path": "calendars/{calendarId}/acl/{ruleId}",
+      "path": "/calendars/{calendarId}/acl/{ruleId}",
       "operation_id": "calendar.acl.delete",
       "summary": "Deletes an access control rule.",
       "description": "Deletes an access control rule.",
@@ -13879,7 +13879,7 @@
     },
     {
       "method": "PATCH",
-      "path": "calendars/{calendarId}/acl/{ruleId}",
+      "path": "/calendars/{calendarId}/acl/{ruleId}",
       "operation_id": "calendar.acl.patch",
       "summary": "Updates an access control rule. This method supports patch semantics.",
       "description": "Updates an access control rule. This method supports patch semantics.",
@@ -13915,7 +13915,7 @@
     },
     {
       "method": "POST",
-      "path": "calendars/{calendarId}/acl/watch",
+      "path": "/calendars/{calendarId}/acl/watch",
       "operation_id": "calendar.acl.watch",
       "summary": "Watch for changes to ACL resources.",
       "description": "Watch for changes to ACL resources.",
@@ -13964,7 +13964,7 @@
     },
     {
       "method": "GET",
-      "path": "calendars/{calendarId}/acl",
+      "path": "/calendars/{calendarId}/acl",
       "operation_id": "calendar.acl.list",
       "summary": "Returns the rules in the access control list for the calendar.",
       "description": "Returns the rules in the access control list for the calendar.",
@@ -14013,7 +14013,7 @@
     },
     {
       "method": "PUT",
-      "path": "calendars/{calendarId}/acl/{ruleId}",
+      "path": "/calendars/{calendarId}/acl/{ruleId}",
       "operation_id": "calendar.acl.update",
       "summary": "Updates an access control rule.",
       "description": "Updates an access control rule.",
@@ -14049,7 +14049,7 @@
     },
     {
       "method": "GET",
-      "path": "calendars/{calendarId}/acl/{ruleId}",
+      "path": "/calendars/{calendarId}/acl/{ruleId}",
       "operation_id": "calendar.acl.get",
       "summary": "Returns an access control rule.",
       "description": "Returns an access control rule.",
@@ -14081,7 +14081,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}:batchUpdate",
+      "path": "/v4/spreadsheets/{spreadsheetId}:batchUpdate",
       "operation_id": "sheets.spreadsheets.batchUpdate",
       "summary": "Applies one or more updates to the spreadsheet. Each request is validated before being applied. If any request is not valid then the entire request will fail and nothing will be applied. Some requests have replies to give you some information about how they are applied. The replies will mirror the requests. For example, if you applied 4 updates and the 3rd one had a reply, then the response will have 2 empty replies, the actual reply, and another empty reply, in that order. Due to the collaborative nature of spreadsheets, it is not guaranteed that the spreadsheet will reflect exactly your changes after this completes, however it is guaranteed that the updates in the request will be applied together atomically. Your changes may be altered with respect to collaborator changes. If there are no collaborators, the spreadsheet should reflect your changes.",
       "description": "Applies one or more updates to the spreadsheet. Each request is validated before being applied. If any request is not valid then the entire request will fail and nothing will be applied. Some requests have replies to give you some information about how they are applied. The replies will mirror the requests. For example, if you applied 4 updates and the 3rd one had a reply, then the response will have 2 empty replies, the actual reply, and another empty reply, in that order. Due to the collaborative nature of spreadsheets, it is not guaranteed that the spreadsheet will reflect exactly your changes after this completes, however it is guaranteed that the updates in the request will be applied together atomically. Your changes may be altered with respect to collaborator changes. If there are no collaborators, the spreadsheet should reflect your changes.",
@@ -14106,7 +14106,7 @@
     },
     {
       "method": "GET",
-      "path": "v4/spreadsheets/{spreadsheetId}",
+      "path": "/v4/spreadsheets/{spreadsheetId}",
       "operation_id": "sheets.spreadsheets.get",
       "summary": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned. You can include grid data in one of 2 ways: * Specify a [field mask](https://developers.google.com/workspace/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want. To retrieve only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified using [A1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell). You can define a single cell (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also get cells from other sheets within the same spreadsheet (for example, `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example, `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the portions of the spreadsheet that intersect the requested ranges.",
       "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned. You can include grid data in one of 2 ways: * Specify a [field mask](https://developers.google.com/workspace/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want. To retrieve only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified using [A1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell). You can define a single cell (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also get cells from other sheets within the same spreadsheet (for example, `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example, `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the portions of the spreadsheet that intersect the requested ranges.",
@@ -14151,7 +14151,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}:getByDataFilter",
+      "path": "/v4/spreadsheets/{spreadsheetId}:getByDataFilter",
       "operation_id": "sheets.spreadsheets.getByDataFilter",
       "summary": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned. You can include grid data in one of two ways: * Specify a [field mask](https://developers.google.com/workspace/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP. * Set the includeGridData parameter to `true`. If a field mask is set, the `includeGridData` parameter is ignored. For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want.",
       "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned. You can include grid data in one of two ways: * Specify a [field mask](https://developers.google.com/workspace/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP. * Set the includeGridData parameter to `true`. If a field mask is set, the `includeGridData` parameter is ignored. For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want.",
@@ -14176,7 +14176,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets",
+      "path": "/v4/spreadsheets",
       "operation_id": "sheets.spreadsheets.create",
       "summary": "Creates a spreadsheet, returning the newly created spreadsheet.",
       "description": "Creates a spreadsheet, returning the newly created spreadsheet.",
@@ -14194,7 +14194,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}/values/{range}:clear",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values/{range}:clear",
       "operation_id": "sheets.spreadsheets.values.clear",
       "summary": "Clears values from a spreadsheet. The caller must specify the spreadsheet ID and range. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.",
       "description": "Clears values from a spreadsheet. The caller must specify the spreadsheet ID and range. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.",
@@ -14225,7 +14225,7 @@
     },
     {
       "method": "GET",
-      "path": "v4/spreadsheets/{spreadsheetId}/values:batchGet",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values:batchGet",
       "operation_id": "sheets.spreadsheets.values.batchGet",
       "summary": "Returns one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges.",
       "description": "Returns one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges.",
@@ -14276,7 +14276,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}/values:batchClearByDataFilter",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values:batchClearByDataFilter",
       "operation_id": "sheets.spreadsheets.values.batchClearByDataFilter",
       "summary": "Clears one or more ranges of values from a spreadsheet. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). The caller must specify the spreadsheet ID and one or more DataFilters. Ranges matching any of the specified data filters will be cleared. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc.) are kept.",
       "description": "Clears one or more ranges of values from a spreadsheet. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). The caller must specify the spreadsheet ID and one or more DataFilters. Ranges matching any of the specified data filters will be cleared. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc.) are kept.",
@@ -14301,7 +14301,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}/values:batchGetByDataFilter",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values:batchGetByDataFilter",
       "operation_id": "sheets.spreadsheets.values.batchGetByDataFilter",
       "summary": "Returns one or more ranges of values that match the specified data filters. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). The caller must specify the spreadsheet ID and one or more DataFilters. Ranges that match any of the data filters in the request will be returned.",
       "description": "Returns one or more ranges of values that match the specified data filters. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). The caller must specify the spreadsheet ID and one or more DataFilters. Ranges that match any of the data filters in the request will be returned.",
@@ -14326,7 +14326,7 @@
     },
     {
       "method": "GET",
-      "path": "v4/spreadsheets/{spreadsheetId}/values/{range}",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values/{range}",
       "operation_id": "sheets.spreadsheets.values.get",
       "summary": "Returns a range of values from a spreadsheet. The caller must specify the spreadsheet ID and a range.",
       "description": "Returns a range of values from a spreadsheet. The caller must specify the spreadsheet ID and a range.",
@@ -14377,7 +14377,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}/values:batchUpdateByDataFilter",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values:batchUpdateByDataFilter",
       "operation_id": "sheets.spreadsheets.values.batchUpdateByDataFilter",
       "summary": "Sets values in one or more ranges of a spreadsheet. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). The caller must specify the spreadsheet ID, a valueInputOption, and one or more DataFilterValueRanges.",
       "description": "Sets values in one or more ranges of a spreadsheet. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). The caller must specify the spreadsheet ID, a valueInputOption, and one or more DataFilterValueRanges.",
@@ -14402,7 +14402,7 @@
     },
     {
       "method": "PUT",
-      "path": "v4/spreadsheets/{spreadsheetId}/values/{range}",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values/{range}",
       "operation_id": "sheets.spreadsheets.values.update",
       "summary": "Sets values in a range of a spreadsheet. The caller must specify the spreadsheet ID, range, and a valueInputOption.",
       "description": "Sets values in a range of a spreadsheet. The caller must specify the spreadsheet ID, range, and a valueInputOption.",
@@ -14457,7 +14457,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}/values:batchUpdate",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values:batchUpdate",
       "operation_id": "sheets.spreadsheets.values.batchUpdate",
       "summary": "Sets values in one or more ranges of a spreadsheet. The caller must specify the spreadsheet ID, a valueInputOption, and one or more ValueRanges.",
       "description": "Sets values in one or more ranges of a spreadsheet. The caller must specify the spreadsheet ID, a valueInputOption, and one or more ValueRanges.",
@@ -14482,7 +14482,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}/values:batchClear",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values:batchClear",
       "operation_id": "sheets.spreadsheets.values.batchClear",
       "summary": "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept.",
       "description": "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept.",
@@ -14507,7 +14507,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}/values/{range}:append",
+      "path": "/v4/spreadsheets/{spreadsheetId}/values/{range}:append",
       "operation_id": "sheets.spreadsheets.values.append",
       "summary": "Appends values to a spreadsheet. The input range is used to search for existing data and find a \"table\" within that range. Values will be appended to the next row of the table, starting with the first column of the table. See the [guide](https://developers.google.com/workspace/sheets/api/guides/values#appending_values) and [sample code](https://developers.google.com/workspace/sheets/api/samples/writing#append_values) for specific details of how tables are detected and data is appended. The caller must specify the spreadsheet ID, range, and a valueInputOption. The `valueInputOption` only controls how the input data will be added to the sheet (column-wise or row-wise), it does not influence what cell the data starts being written to.",
       "description": "Appends values to a spreadsheet. The input range is used to search for existing data and find a \"table\" within that range. Values will be appended to the next row of the table, starting with the first column of the table. See the [guide](https://developers.google.com/workspace/sheets/api/guides/values#appending_values) and [sample code](https://developers.google.com/workspace/sheets/api/samples/writing#append_values) for specific details of how tables are detected and data is appended. The caller must specify the spreadsheet ID, range, and a valueInputOption. The `valueInputOption` only controls how the input data will be added to the sheet (column-wise or row-wise), it does not influence what cell the data starts being written to.",
@@ -14568,7 +14568,7 @@
     },
     {
       "method": "GET",
-      "path": "v4/spreadsheets/{spreadsheetId}/developerMetadata/{metadataId}",
+      "path": "/v4/spreadsheets/{spreadsheetId}/developerMetadata/{metadataId}",
       "operation_id": "sheets.spreadsheets.developerMetadata.get",
       "summary": "Returns the developer metadata with the specified ID. The caller must specify the spreadsheet ID and the developer metadata's unique metadataId. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata).",
       "description": "Returns the developer metadata with the specified ID. The caller must specify the spreadsheet ID and the developer metadata's unique metadataId. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata).",
@@ -14599,7 +14599,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}/developerMetadata:search",
+      "path": "/v4/spreadsheets/{spreadsheetId}/developerMetadata:search",
       "operation_id": "sheets.spreadsheets.developerMetadata.search",
       "summary": "Returns all developer metadata matching the specified DataFilter. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). If the provided DataFilter represents a DeveloperMetadataLookup object, this will return all DeveloperMetadata entries selected by it. If the DataFilter represents a location in a spreadsheet, this will return all developer metadata associated with locations intersecting that region.",
       "description": "Returns all developer metadata matching the specified DataFilter. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). If the provided DataFilter represents a DeveloperMetadataLookup object, this will return all DeveloperMetadata entries selected by it. If the DataFilter represents a location in a spreadsheet, this will return all developer metadata associated with locations intersecting that region.",
@@ -14624,7 +14624,7 @@
     },
     {
       "method": "POST",
-      "path": "v4/spreadsheets/{spreadsheetId}/sheets/{sheetId}:copyTo",
+      "path": "/v4/spreadsheets/{spreadsheetId}/sheets/{sheetId}:copyTo",
       "operation_id": "sheets.spreadsheets.sheets.copyTo",
       "summary": "Copies a single sheet from a spreadsheet to another spreadsheet. Returns the properties of the newly created sheet.",
       "description": "Copies a single sheet from a spreadsheet to another spreadsheet. Returns the properties of the newly created sheet.",

@@ -1,0 +1,13 @@
+interface:
+  display_name: "Enterprise Tool Builder"
+  short_description: "Build safe LangChain enterprise API tools"
+  default_prompt: "Use $enterprise-tool-builder to turn an enterprise API workflow into a small, validated LangChain or MCP-ready toolset."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "langchain-docs"
+      description: "LangChain docs MCP server for MCP transport and tool implementation references"
+
+policy:
+  allow_implicit_invocation: true
